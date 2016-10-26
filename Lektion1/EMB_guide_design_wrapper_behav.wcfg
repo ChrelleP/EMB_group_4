@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Guide_EMB1_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Guide_EMB1" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1570000000fs"></ZoomStartTime>
+      <ZoomEndTime time="1691800001fs"></ZoomEndTime>
+      <Cursor1Time time="51000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="3" />
+   <wvobject type="logic" fp_name="/Guide_EMB1/clk_200M_In">
+      <obj_property name="ElementShortName">clk_200M_In</obj_property>
+      <obj_property name="ObjectShortName">clk_200M_In</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Guide_EMB1/sw_in">
+      <obj_property name="ElementShortName">sw_in</obj_property>
+      <obj_property name="ObjectShortName">sw_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Guide_EMB1/led_out">
+      <obj_property name="ElementShortName">led_out</obj_property>
+      <obj_property name="ObjectShortName">led_out</obj_property>
+   </wvobject>
+</wave_config>

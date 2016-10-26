@@ -1,0 +1,7 @@
+Running: xsim.dir/Guide_EMB1_behav/xsimk -simmode gui -wdb Guide_EMB1_behav.wdb -simrunnum 0 -socket 46195
+Design successfully loaded
+Design Loading Memory Usage: 53016 KB (Peak: 53068 KB)
+Design Loading CPU Usage: 20 ms
+Simulation completed
+Simulation Memory Usage: 134756 KB (Peak: 200292 KB)
+Simulation CPU Usage: 30 ms
