@@ -57,7 +57,7 @@ ENTITY Lab5_ClockInverter_0_0 IS
   PORT (
     clk_in : IN STD_LOGIC;
     sw_in : IN STD_LOGIC;
-    clk_inv_out : OUT STD_LOGIC
+    clk_out : OUT STD_LOGIC
   );
 END Lab5_ClockInverter_0_0;
 
@@ -68,7 +68,7 @@ ARCHITECTURE Lab5_ClockInverter_0_0_arch OF Lab5_ClockInverter_0_0 IS
     PORT (
       clk_in : IN STD_LOGIC;
       sw_in : IN STD_LOGIC;
-      clk_inv_out : OUT STD_LOGIC
+      clk_out : OUT STD_LOGIC
     );
   END COMPONENT ClockInverter;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -80,6 +80,6 @@ BEGIN
     PORT MAP (
       clk_in => clk_in,
       sw_in => sw_in,
-      clk_inv_out => clk_inv_out
+      clk_out => clk_out
     );
 END Lab5_ClockInverter_0_0_arch;

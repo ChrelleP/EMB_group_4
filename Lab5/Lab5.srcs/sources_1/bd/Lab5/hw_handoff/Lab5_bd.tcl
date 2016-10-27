@@ -166,7 +166,7 @@ proc create_root_design { parentCell } {
 
   # Create ports
   set clk_in [ create_bd_port -dir I clk_in ]
-  set clk_inv_out [ create_bd_port -dir O clk_inv_out ]
+  set clk_out [ create_bd_port -dir O clk_out ]
   set sw_in [ create_bd_port -dir I sw_in ]
 
   # Create instance: ClockInverter_0, and set properties
@@ -848,7 +848,7 @@ CONFIG.PCW_SPI1_SPI1_IO {<Select>} \
 CONFIG.PCW_SPI_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_SPI_PERIPHERAL_DIVISOR0 {1} \
 CONFIG.PCW_SPI_PERIPHERAL_FREQMHZ {166.666666} \
-CONFIG.PCW_SPI_PERIPHERAL_VALID {1} \
+CONFIG.PCW_SPI_PERIPHERAL_VALID {0} \
 CONFIG.PCW_S_AXI_ACP_ARUSER_VAL {31} \
 CONFIG.PCW_S_AXI_ACP_AWUSER_VAL {31} \
 CONFIG.PCW_S_AXI_ACP_FREQMHZ {10} \
@@ -938,10 +938,10 @@ CONFIG.PCW_UIPARAM_DDR_ADV_ENABLE {0} \
 CONFIG.PCW_UIPARAM_DDR_AL {0} \
 CONFIG.PCW_UIPARAM_DDR_BANK_ADDR_COUNT {3} \
 CONFIG.PCW_UIPARAM_DDR_BL {8} \
-CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY0 {0} \
-CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY1 {0} \
-CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY2 {0} \
-CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY3 {0} \
+CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY0 {0.0} \
+CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY1 {0.0} \
+CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY2 {0.0} \
+CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY3 {0.0} \
 CONFIG.PCW_UIPARAM_DDR_BUS_WIDTH {16 Bit} \
 CONFIG.PCW_UIPARAM_DDR_CL {7} \
 CONFIG.PCW_UIPARAM_DDR_CLOCK_0_LENGTH_MM {0} \
@@ -972,10 +972,10 @@ CONFIG.PCW_UIPARAM_DDR_DQS_2_PROPOGATION_DELAY {160} \
 CONFIG.PCW_UIPARAM_DDR_DQS_3_LENGTH_MM {0} \
 CONFIG.PCW_UIPARAM_DDR_DQS_3_PACKAGE_LENGTH {700} \
 CONFIG.PCW_UIPARAM_DDR_DQS_3_PROPOGATION_DELAY {160} \
-CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 {0} \
-CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 {0} \
-CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 {0} \
-CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 {0} \
+CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 {0.0} \
+CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 {0.0} \
+CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 {0.0} \
+CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 {0.0} \
 CONFIG.PCW_UIPARAM_DDR_DQ_0_LENGTH_MM {0} \
 CONFIG.PCW_UIPARAM_DDR_DQ_0_PACKAGE_LENGTH {77.166} \
 CONFIG.PCW_UIPARAM_DDR_DQ_0_PROPOGATION_DELAY {160} \
@@ -1214,7 +1214,7 @@ CONFIG.PCW_WDT_WDT_IO.VALUE_SRC {DEFAULT} \
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
 
   # Create port connections
-  connect_bd_net -net ClockInverter_0_clk_inv_out [get_bd_ports clk_inv_out] [get_bd_pins ClockInverter_0/clk_inv_out]
+  connect_bd_net -net ClockInverter_0_clk_out [get_bd_ports clk_out] [get_bd_pins ClockInverter_0/clk_out]
   connect_bd_net -net Debounce_0_sw_out [get_bd_pins ClockInverter_0/sw_in] [get_bd_pins Debounce_0/sw_out]
   connect_bd_net -net clk_in_1 [get_bd_ports clk_in] [get_bd_pins ClockInverter_0/clk_in]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK]
@@ -1228,22 +1228,22 @@ CONFIG.PCW_WDT_WDT_IO.VALUE_SRC {DEFAULT} \
    guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
 preplace port DDR -pg 1 -y 10 -defaultsOSRD
-preplace port clk_inv_out -pg 1 -y 310 -defaultsOSRD
+preplace port clk_out -pg 1 -y 310 -defaultsOSRD
 preplace port clk_in -pg 1 -y 300 -defaultsOSRD
-preplace port sw_in -pg 1 -y 320 -defaultsOSRD
+preplace port sw_in -pg 1 -y 390 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 30 -defaultsOSRD
-preplace inst ClockInverter_0 -pg 1 -lvl 2 -y 310 -defaultsOSRD
-preplace inst Debounce_0 -pg 1 -lvl 1 -y 320 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 2 -y 110 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 2 1 NJ
-preplace netloc ClockInverter_0_clk_inv_out 1 2 1 N
-preplace netloc Debounce_0_sw_out 1 1 1 N
+preplace inst ClockInverter_0 -pg 1 -lvl 1 -y 300 -defaultsOSRD
+preplace inst Debounce_0 -pg 1 -lvl 1 -y 420 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 40 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 1 1 NJ
+preplace netloc Debounce_0_sw_out 1 0 2 -100 360 540
 preplace netloc sw_in_1 1 0 1 -120
-preplace netloc clk_in_1 1 0 2 -120 260 140
-preplace netloc processing_system7_0_FIXED_IO 1 2 1 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 1 2 140 -30 540
-preplace netloc processing_system7_0_FCLK_CLK1 1 0 3 -110 250 NJ 250 540
-levelinfo -pg 1 -140 50 340 570 -top -140 -bot 380
+preplace netloc ClockInverter_0_clk_out 1 1 1 550
+preplace netloc clk_in_1 1 0 1 -120
+preplace netloc processing_system7_0_FIXED_IO 1 1 1 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 -120 -100 540
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 2 -110 180 540
+levelinfo -pg 1 -140 340 580 -top -140 -bot 570
 ",
 }
 

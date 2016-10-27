@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
---Date        : Wed Oct 26 13:37:06 2016
+--Date        : Thu Oct 27 13:49:34 2016
 --Host        : Error404 running 64-bit Ubuntu 14.04.5 LTS
 --Command     : generate_target Lab5.bd
 --Design      : Lab5
@@ -33,12 +33,15 @@ entity Lab5 is
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    clk_in : in STD_LOGIC;
+    clk_out : out STD_LOGIC;
+    sw_in : in STD_LOGIC
   );
-  attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of Lab5 : entity is "Lab5,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Lab5,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=3,numReposBlks=3,numNonXlnxBlks=2,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=Global}";
-  attribute HW_HANDOFF : string;
-  attribute HW_HANDOFF of Lab5 : entity is "Lab5.hwdef";
+  attribute core_generation_info : string;
+  attribute core_generation_info of Lab5 : entity is "Lab5,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Lab5,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=3,numReposBlks=3,numNonXlnxBlks=2,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=Global}";
+  attribute hw_handoff : string;
+  attribute hw_handoff of Lab5 : entity is "Lab5.hwdef";
 end Lab5;
 
 architecture STRUCTURE of Lab5 is
@@ -116,19 +119,23 @@ architecture STRUCTURE of Lab5 is
     PS_PORB : inout STD_LOGIC
   );
   end component Lab5_processing_system7_0_0;
-  component Lab5_Debounce_0_0 is
-  port (
-    sw_in : in STD_LOGIC;
-    sw_out : out STD_LOGIC
-  );
-  end component Lab5_Debounce_0_0;
   component Lab5_ClockInverter_0_0 is
   port (
     clk_in : in STD_LOGIC;
     sw_in : in STD_LOGIC;
-    clk_inv_out : out STD_LOGIC
+    clk_out : out STD_LOGIC
   );
   end component Lab5_ClockInverter_0_0;
+  component Lab5_Debounce_0_0 is
+  port (
+    sw_in : in STD_LOGIC;
+    sw_out : out STD_LOGIC;
+    clk_in : in STD_LOGIC
+  );
+  end component Lab5_Debounce_0_0;
+  signal ClockInverter_0_clk_out : STD_LOGIC;
+  signal Debounce_0_sw_out : STD_LOGIC;
+  signal clk_in_1 : STD_LOGIC;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -145,15 +152,14 @@ architecture STRUCTURE of Lab5 is
   signal processing_system7_0_DDR_RESET_N : STD_LOGIC;
   signal processing_system7_0_DDR_WE_N : STD_LOGIC;
   signal processing_system7_0_FCLK_CLK0 : STD_LOGIC;
+  signal processing_system7_0_FCLK_CLK1 : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_DDR_VRN : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_DDR_VRP : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_MIO : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal processing_system7_0_FIXED_IO_PS_CLK : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_PORB : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_SRSTB : STD_LOGIC;
-  signal NLW_ClockInverter_0_clk_inv_out_UNCONNECTED : STD_LOGIC;
-  signal NLW_Debounce_0_sw_out_UNCONNECTED : STD_LOGIC;
-  signal NLW_processing_system7_0_FCLK_CLK1_UNCONNECTED : STD_LOGIC;
+  signal sw_in_1 : STD_LOGIC;
   signal NLW_processing_system7_0_FCLK_RESET0_N_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_ARVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_AWVALID_UNCONNECTED : STD_LOGIC;
@@ -188,16 +194,20 @@ architecture STRUCTURE of Lab5 is
   signal NLW_processing_system7_0_M_AXI_GP0_WSTRB_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
 begin
+  clk_in_1 <= clk_in;
+  clk_out <= ClockInverter_0_clk_out;
+  sw_in_1 <= sw_in;
 ClockInverter_0: component Lab5_ClockInverter_0_0
      port map (
-      clk_in => '0',
-      clk_inv_out => NLW_ClockInverter_0_clk_inv_out_UNCONNECTED,
-      sw_in => '0'
+      clk_in => clk_in_1,
+      clk_out => ClockInverter_0_clk_out,
+      sw_in => Debounce_0_sw_out
     );
 Debounce_0: component Lab5_Debounce_0_0
      port map (
-      sw_in => '0',
-      sw_out => NLW_Debounce_0_sw_out_UNCONNECTED
+      clk_in => processing_system7_0_FCLK_CLK1,
+      sw_in => sw_in_1,
+      sw_out => Debounce_0_sw_out
     );
 processing_system7_0: component Lab5_processing_system7_0_0
      port map (
@@ -219,7 +229,7 @@ processing_system7_0: component Lab5_processing_system7_0_0
       DDR_VRP => FIXED_IO_ddr_vrp,
       DDR_WEB => DDR_we_n,
       FCLK_CLK0 => processing_system7_0_FCLK_CLK0,
-      FCLK_CLK1 => NLW_processing_system7_0_FCLK_CLK1_UNCONNECTED,
+      FCLK_CLK1 => processing_system7_0_FCLK_CLK1,
       FCLK_RESET0_N => NLW_processing_system7_0_FCLK_RESET0_N_UNCONNECTED,
       IRQ_F2P(0) => '0',
       MIO(31 downto 0) => FIXED_IO_mio(31 downto 0),

@@ -46,13 +46,15 @@ begin
     begin
         if rising_edge(clk_in) then
             if sw_in = '1' then
-                counter:= counter+1; 
+                if counter < 110 then
+                    counter:= counter+1; 
+                 end if;
             else
                 counter:= 0;
             end if;
         end if;
        
-       if counter > 100 then
+       if counter >= 100 then
             sw_out <= '1';
        else
             sw_out <='0';

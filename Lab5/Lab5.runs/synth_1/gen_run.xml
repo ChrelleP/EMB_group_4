@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg225-1" LaunchTime="1477485957">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg225-1" LaunchTime="1477568978">
   <File Type="VDS-TIMING-PB" Name="Lab5_wrapper_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="Lab5_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="Lab5_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="Lab5_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="Lab5_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="Lab5_wrapper_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="Lab5_wrapper.vds"/>
   <File Type="PA-TCL" Name="Lab5_wrapper.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Lab5_wrapper_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="Lab5_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="Lab5_wrapper_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="Lab5_wrapper.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/Debounce.vhd">
+    <File Path="$PSRCDIR/sources_1/new/ClockInverter.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/ClockInverter.vhd">
+    <File Path="$PSRCDIR/sources_1/new/Debounce.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -55,9 +55,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

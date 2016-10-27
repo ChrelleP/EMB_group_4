@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Wed Oct 26 14:50:32 2016
+| Date         : Thu Oct 27 13:51:57 2016
 | Host         : Error404 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_timing_summary -warn_on_violation -max_paths 10 -file Lab5_wrapper_timing_summary_routed.rpt -rpx Lab5_wrapper_timing_summary_routed.rpx
 | Design       : Lab5_wrapper
@@ -126,7 +126,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      6.959        0.000                      0                   32        0.330        0.000                      0                   32        4.500        0.000                       0                    34  
+      6.147        0.000                      0                   64        0.264        0.000                      0                   64        4.500        0.000                       0                    34  
 
 
 All user specified timing constraints are met.
@@ -151,7 +151,7 @@ clk_fpga_1  {0.000 5.000}      10.000          100.000
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
 clk_fpga_0                                                                                                                                                     17.845        0.000                       0                     1  
-clk_fpga_1          6.959        0.000                      0                   32        0.330        0.000                      0                   32        4.500        0.000                       0                    33  
+clk_fpga_1          6.147        0.000                      0                   64        0.264        0.000                      0                   64        4.500        0.000                       0                    33  
 
 
 ------------------------------------------------------------------------------------------------
@@ -204,26 +204,286 @@ Min Period  n/a     BUFG/I   n/a            2.155         20.000      17.845    
 From Clock:  clk_fpga_1
   To Clock:  clk_fpga_1
 
-Setup :            0  Failing Endpoints,  Worst Slack        6.959ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.330ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        6.147ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.264ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             6.959ns  (required time - arrival time)
+Slack (MET) :             6.147ns  (required time - arrival time)
   Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[29]/D
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[0]/CE
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_1
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        2.935ns  (logic 1.996ns (68.010%)  route 0.939ns (31.990%))
-  Logic Levels:           8  (CARRY4=8)
-  Clock Path Skew:        -0.014ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.761ns = ( 12.761 - 10.000 ) 
+  Data Path Delay:        3.682ns  (logic 1.464ns (39.756%)  route 2.218ns (60.244%))
+  Logic Levels:           5  (CARRY4=4 LUT2=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.753ns = ( 12.753 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.044ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
+                         net (fo=4, routed)           0.957     4.457    Lab5_i/Debounce_0/U0/counter_reg[2]
+    SLICE_X42Y28         LUT2 (Prop_lut2_I0_O)        0.124     4.581 r  Lab5_i/Debounce_0/U0/counter0_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.581    Lab5_i/Debounce_0/U0/counter0_carry_i_7_n_0
+    SLICE_X42Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     5.114 r  Lab5_i/Debounce_0/U0/counter0_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.114    Lab5_i/Debounce_0/U0/counter0_carry_n_0
+    SLICE_X42Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.231 r  Lab5_i/Debounce_0/U0/counter0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.231    Lab5_i/Debounce_0/U0/counter0_carry__0_n_0
+    SLICE_X42Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.348 r  Lab5_i/Debounce_0/U0/counter0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.348    Lab5_i/Debounce_0/U0/counter0_carry__1_n_0
+    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.465 r  Lab5_i/Debounce_0/U0/counter0_carry__2/CO[3]
+                         net (fo=32, routed)          1.261     6.726    Lab5_i/Debounce_0/U0/sel
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[0]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_1 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          1.561    12.753    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[0]/C
+                         clock pessimism              0.291    13.044    
+                         clock uncertainty           -0.154    12.890    
+    SLICE_X41Y26         FDRE (Setup_fdre_C_CE)      -0.016    12.874    Lab5_i/Debounce_0/U0/counter_reg[0]
+  -------------------------------------------------------------------
+                         required time                         12.874    
+                         arrival time                          -6.726    
+  -------------------------------------------------------------------
+                         slack                                  6.147    
+
+Slack (MET) :             6.147ns  (required time - arrival time)
+  Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[1]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
+  Data Path Delay:        3.682ns  (logic 1.464ns (39.756%)  route 2.218ns (60.244%))
+  Logic Levels:           5  (CARRY4=4 LUT2=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.753ns = ( 12.753 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.044ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
+                         net (fo=4, routed)           0.957     4.457    Lab5_i/Debounce_0/U0/counter_reg[2]
+    SLICE_X42Y28         LUT2 (Prop_lut2_I0_O)        0.124     4.581 r  Lab5_i/Debounce_0/U0/counter0_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.581    Lab5_i/Debounce_0/U0/counter0_carry_i_7_n_0
+    SLICE_X42Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     5.114 r  Lab5_i/Debounce_0/U0/counter0_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.114    Lab5_i/Debounce_0/U0/counter0_carry_n_0
+    SLICE_X42Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.231 r  Lab5_i/Debounce_0/U0/counter0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.231    Lab5_i/Debounce_0/U0/counter0_carry__0_n_0
+    SLICE_X42Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.348 r  Lab5_i/Debounce_0/U0/counter0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.348    Lab5_i/Debounce_0/U0/counter0_carry__1_n_0
+    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.465 r  Lab5_i/Debounce_0/U0/counter0_carry__2/CO[3]
+                         net (fo=32, routed)          1.261     6.726    Lab5_i/Debounce_0/U0/sel
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_1 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          1.561    12.753    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[1]/C
+                         clock pessimism              0.291    13.044    
+                         clock uncertainty           -0.154    12.890    
+    SLICE_X41Y26         FDRE (Setup_fdre_C_CE)      -0.016    12.874    Lab5_i/Debounce_0/U0/counter_reg[1]
+  -------------------------------------------------------------------
+                         required time                         12.874    
+                         arrival time                          -6.726    
+  -------------------------------------------------------------------
+                         slack                                  6.147    
+
+Slack (MET) :             6.147ns  (required time - arrival time)
+  Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[2]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
+  Data Path Delay:        3.682ns  (logic 1.464ns (39.756%)  route 2.218ns (60.244%))
+  Logic Levels:           5  (CARRY4=4 LUT2=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.753ns = ( 12.753 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.044ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
+                         net (fo=4, routed)           0.957     4.457    Lab5_i/Debounce_0/U0/counter_reg[2]
+    SLICE_X42Y28         LUT2 (Prop_lut2_I0_O)        0.124     4.581 r  Lab5_i/Debounce_0/U0/counter0_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.581    Lab5_i/Debounce_0/U0/counter0_carry_i_7_n_0
+    SLICE_X42Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     5.114 r  Lab5_i/Debounce_0/U0/counter0_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.114    Lab5_i/Debounce_0/U0/counter0_carry_n_0
+    SLICE_X42Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.231 r  Lab5_i/Debounce_0/U0/counter0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.231    Lab5_i/Debounce_0/U0/counter0_carry__0_n_0
+    SLICE_X42Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.348 r  Lab5_i/Debounce_0/U0/counter0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.348    Lab5_i/Debounce_0/U0/counter0_carry__1_n_0
+    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.465 r  Lab5_i/Debounce_0/U0/counter0_carry__2/CO[3]
+                         net (fo=32, routed)          1.261     6.726    Lab5_i/Debounce_0/U0/sel
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_1 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          1.561    12.753    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
+                         clock pessimism              0.291    13.044    
+                         clock uncertainty           -0.154    12.890    
+    SLICE_X41Y26         FDRE (Setup_fdre_C_CE)      -0.016    12.874    Lab5_i/Debounce_0/U0/counter_reg[2]
+  -------------------------------------------------------------------
+                         required time                         12.874    
+                         arrival time                          -6.726    
+  -------------------------------------------------------------------
+                         slack                                  6.147    
+
+Slack (MET) :             6.147ns  (required time - arrival time)
+  Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[3]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
+  Data Path Delay:        3.682ns  (logic 1.464ns (39.756%)  route 2.218ns (60.244%))
+  Logic Levels:           5  (CARRY4=4 LUT2=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.753ns = ( 12.753 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.044ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
+                         net (fo=4, routed)           0.957     4.457    Lab5_i/Debounce_0/U0/counter_reg[2]
+    SLICE_X42Y28         LUT2 (Prop_lut2_I0_O)        0.124     4.581 r  Lab5_i/Debounce_0/U0/counter0_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.581    Lab5_i/Debounce_0/U0/counter0_carry_i_7_n_0
+    SLICE_X42Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     5.114 r  Lab5_i/Debounce_0/U0/counter0_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.114    Lab5_i/Debounce_0/U0/counter0_carry_n_0
+    SLICE_X42Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.231 r  Lab5_i/Debounce_0/U0/counter0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.231    Lab5_i/Debounce_0/U0/counter0_carry__0_n_0
+    SLICE_X42Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.348 r  Lab5_i/Debounce_0/U0/counter0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.348    Lab5_i/Debounce_0/U0/counter0_carry__1_n_0
+    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.465 r  Lab5_i/Debounce_0/U0/counter0_carry__2/CO[3]
+                         net (fo=32, routed)          1.261     6.726    Lab5_i/Debounce_0/U0/sel
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[3]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_1 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          1.561    12.753    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[3]/C
+                         clock pessimism              0.291    13.044    
+                         clock uncertainty           -0.154    12.890    
+    SLICE_X41Y26         FDRE (Setup_fdre_C_CE)      -0.016    12.874    Lab5_i/Debounce_0/U0/counter_reg[3]
+  -------------------------------------------------------------------
+                         required time                         12.874    
+                         arrival time                          -6.726    
+  -------------------------------------------------------------------
+                         slack                                  6.147    
+
+Slack (MET) :             6.266ns  (required time - arrival time)
+  Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[4]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
+  Data Path Delay:        3.543ns  (logic 1.464ns (41.326%)  route 2.079ns (58.674%))
+  Logic Levels:           5  (CARRY4=4 LUT2=1)
+  Clock Path Skew:        -0.021ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.754ns = ( 12.754 - 10.000 ) 
     Source Clock Delay      (SCD):    3.044ns
     Clock Pessimism Removal (CPR):    0.269ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -240,35 +500,25 @@ Slack (MET) :             6.959ns  (required time - arrival time)
                          net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
                          net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
-                         net (fo=2, routed)           0.939     4.439    Lab5_i/Debounce_0/U0/counter_reg[2]
-    SLICE_X40Y26         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     4.961 r  Lab5_i/Debounce_0/U0/counter_reg[0]_i_2/CO[3]
-                         net (fo=1, routed)           0.000     4.961    Lab5_i/Debounce_0/U0/counter_reg[0]_i_2_n_0
-    SLICE_X40Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.075 r  Lab5_i/Debounce_0/U0/counter_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.075    Lab5_i/Debounce_0/U0/counter_reg[4]_i_1_n_0
-    SLICE_X40Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.189 r  Lab5_i/Debounce_0/U0/counter_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.189    Lab5_i/Debounce_0/U0/counter_reg[8]_i_1_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.303 r  Lab5_i/Debounce_0/U0/counter_reg[12]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.303    Lab5_i/Debounce_0/U0/counter_reg[12]_i_1_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.417 r  Lab5_i/Debounce_0/U0/counter_reg[16]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.417    Lab5_i/Debounce_0/U0/counter_reg[16]_i_1_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.531 r  Lab5_i/Debounce_0/U0/counter_reg[20]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.531    Lab5_i/Debounce_0/U0/counter_reg[20]_i_1_n_0
-    SLICE_X40Y32         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.645 r  Lab5_i/Debounce_0/U0/counter_reg[24]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.645    Lab5_i/Debounce_0/U0/counter_reg[24]_i_1_n_0
-    SLICE_X40Y33         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     5.979 r  Lab5_i/Debounce_0/U0/counter_reg[28]_i_1/O[1]
-                         net (fo=1, routed)           0.000     5.979    Lab5_i/Debounce_0/U0/counter_reg[28]_i_1_n_6
-    SLICE_X40Y33         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[29]/D
+    SLICE_X41Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
+                         net (fo=4, routed)           0.957     4.457    Lab5_i/Debounce_0/U0/counter_reg[2]
+    SLICE_X42Y28         LUT2 (Prop_lut2_I0_O)        0.124     4.581 r  Lab5_i/Debounce_0/U0/counter0_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.581    Lab5_i/Debounce_0/U0/counter0_carry_i_7_n_0
+    SLICE_X42Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     5.114 r  Lab5_i/Debounce_0/U0/counter0_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.114    Lab5_i/Debounce_0/U0/counter0_carry_n_0
+    SLICE_X42Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.231 r  Lab5_i/Debounce_0/U0/counter0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.231    Lab5_i/Debounce_0/U0/counter0_carry__0_n_0
+    SLICE_X42Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.348 r  Lab5_i/Debounce_0/U0/counter0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.348    Lab5_i/Debounce_0/U0/counter0_carry__1_n_0
+    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.465 r  Lab5_i/Debounce_0/U0/counter0_carry__2/CO[3]
+                         net (fo=32, routed)          1.121     6.587    Lab5_i/Debounce_0/U0/sel
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[4]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_1 rise edge)
@@ -276,29 +526,29 @@ Slack (MET) :             6.959ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
                          net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.569    12.761    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y33         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[29]/C
-                         clock pessimism              0.269    13.030    
-                         clock uncertainty           -0.154    12.876    
-    SLICE_X40Y33         FDRE (Setup_fdre_C_D)        0.062    12.938    Lab5_i/Debounce_0/U0/counter_reg[29]
+                         net (fo=32, routed)          1.562    12.754    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[4]/C
+                         clock pessimism              0.269    13.023    
+                         clock uncertainty           -0.154    12.869    
+    SLICE_X41Y27         FDRE (Setup_fdre_C_CE)      -0.016    12.853    Lab5_i/Debounce_0/U0/counter_reg[4]
   -------------------------------------------------------------------
-                         required time                         12.938    
-                         arrival time                          -5.979    
+                         required time                         12.853    
+                         arrival time                          -6.587    
   -------------------------------------------------------------------
-                         slack                                  6.959    
+                         slack                                  6.266    
 
-Slack (MET) :             6.980ns  (required time - arrival time)
+Slack (MET) :             6.266ns  (required time - arrival time)
   Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[31]/D
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[5]/CE
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_1
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        2.914ns  (logic 1.975ns (67.780%)  route 0.939ns (32.220%))
-  Logic Levels:           8  (CARRY4=8)
-  Clock Path Skew:        -0.014ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.761ns = ( 12.761 - 10.000 ) 
+  Data Path Delay:        3.543ns  (logic 1.464ns (41.326%)  route 2.079ns (58.674%))
+  Logic Levels:           5  (CARRY4=4 LUT2=1)
+  Clock Path Skew:        -0.021ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.754ns = ( 12.754 - 10.000 ) 
     Source Clock Delay      (SCD):    3.044ns
     Clock Pessimism Removal (CPR):    0.269ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -315,35 +565,25 @@ Slack (MET) :             6.980ns  (required time - arrival time)
                          net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
                          net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
-                         net (fo=2, routed)           0.939     4.439    Lab5_i/Debounce_0/U0/counter_reg[2]
-    SLICE_X40Y26         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     4.961 r  Lab5_i/Debounce_0/U0/counter_reg[0]_i_2/CO[3]
-                         net (fo=1, routed)           0.000     4.961    Lab5_i/Debounce_0/U0/counter_reg[0]_i_2_n_0
-    SLICE_X40Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.075 r  Lab5_i/Debounce_0/U0/counter_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.075    Lab5_i/Debounce_0/U0/counter_reg[4]_i_1_n_0
-    SLICE_X40Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.189 r  Lab5_i/Debounce_0/U0/counter_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.189    Lab5_i/Debounce_0/U0/counter_reg[8]_i_1_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.303 r  Lab5_i/Debounce_0/U0/counter_reg[12]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.303    Lab5_i/Debounce_0/U0/counter_reg[12]_i_1_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.417 r  Lab5_i/Debounce_0/U0/counter_reg[16]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.417    Lab5_i/Debounce_0/U0/counter_reg[16]_i_1_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.531 r  Lab5_i/Debounce_0/U0/counter_reg[20]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.531    Lab5_i/Debounce_0/U0/counter_reg[20]_i_1_n_0
-    SLICE_X40Y32         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.645 r  Lab5_i/Debounce_0/U0/counter_reg[24]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.645    Lab5_i/Debounce_0/U0/counter_reg[24]_i_1_n_0
-    SLICE_X40Y33         CARRY4 (Prop_carry4_CI_O[3])
-                                                      0.313     5.958 r  Lab5_i/Debounce_0/U0/counter_reg[28]_i_1/O[3]
-                         net (fo=1, routed)           0.000     5.958    Lab5_i/Debounce_0/U0/counter_reg[28]_i_1_n_4
-    SLICE_X40Y33         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[31]/D
+    SLICE_X41Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
+                         net (fo=4, routed)           0.957     4.457    Lab5_i/Debounce_0/U0/counter_reg[2]
+    SLICE_X42Y28         LUT2 (Prop_lut2_I0_O)        0.124     4.581 r  Lab5_i/Debounce_0/U0/counter0_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.581    Lab5_i/Debounce_0/U0/counter0_carry_i_7_n_0
+    SLICE_X42Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     5.114 r  Lab5_i/Debounce_0/U0/counter0_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.114    Lab5_i/Debounce_0/U0/counter0_carry_n_0
+    SLICE_X42Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.231 r  Lab5_i/Debounce_0/U0/counter0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.231    Lab5_i/Debounce_0/U0/counter0_carry__0_n_0
+    SLICE_X42Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.348 r  Lab5_i/Debounce_0/U0/counter0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.348    Lab5_i/Debounce_0/U0/counter0_carry__1_n_0
+    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.465 r  Lab5_i/Debounce_0/U0/counter0_carry__2/CO[3]
+                         net (fo=32, routed)          1.121     6.587    Lab5_i/Debounce_0/U0/sel
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[5]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_1 rise edge)
@@ -351,29 +591,29 @@ Slack (MET) :             6.980ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
                          net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.569    12.761    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y33         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[31]/C
-                         clock pessimism              0.269    13.030    
-                         clock uncertainty           -0.154    12.876    
-    SLICE_X40Y33         FDRE (Setup_fdre_C_D)        0.062    12.938    Lab5_i/Debounce_0/U0/counter_reg[31]
+                         net (fo=32, routed)          1.562    12.754    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[5]/C
+                         clock pessimism              0.269    13.023    
+                         clock uncertainty           -0.154    12.869    
+    SLICE_X41Y27         FDRE (Setup_fdre_C_CE)      -0.016    12.853    Lab5_i/Debounce_0/U0/counter_reg[5]
   -------------------------------------------------------------------
-                         required time                         12.938    
-                         arrival time                          -5.958    
+                         required time                         12.853    
+                         arrival time                          -6.587    
   -------------------------------------------------------------------
-                         slack                                  6.980    
+                         slack                                  6.266    
 
-Slack (MET) :             7.054ns  (required time - arrival time)
+Slack (MET) :             6.266ns  (required time - arrival time)
   Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[30]/D
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[6]/CE
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_1
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        2.840ns  (logic 1.901ns (66.940%)  route 0.939ns (33.060%))
-  Logic Levels:           8  (CARRY4=8)
-  Clock Path Skew:        -0.014ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.761ns = ( 12.761 - 10.000 ) 
+  Data Path Delay:        3.543ns  (logic 1.464ns (41.326%)  route 2.079ns (58.674%))
+  Logic Levels:           5  (CARRY4=4 LUT2=1)
+  Clock Path Skew:        -0.021ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.754ns = ( 12.754 - 10.000 ) 
     Source Clock Delay      (SCD):    3.044ns
     Clock Pessimism Removal (CPR):    0.269ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -390,35 +630,25 @@ Slack (MET) :             7.054ns  (required time - arrival time)
                          net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
                          net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
-                         net (fo=2, routed)           0.939     4.439    Lab5_i/Debounce_0/U0/counter_reg[2]
-    SLICE_X40Y26         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     4.961 r  Lab5_i/Debounce_0/U0/counter_reg[0]_i_2/CO[3]
-                         net (fo=1, routed)           0.000     4.961    Lab5_i/Debounce_0/U0/counter_reg[0]_i_2_n_0
-    SLICE_X40Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.075 r  Lab5_i/Debounce_0/U0/counter_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.075    Lab5_i/Debounce_0/U0/counter_reg[4]_i_1_n_0
-    SLICE_X40Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.189 r  Lab5_i/Debounce_0/U0/counter_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.189    Lab5_i/Debounce_0/U0/counter_reg[8]_i_1_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.303 r  Lab5_i/Debounce_0/U0/counter_reg[12]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.303    Lab5_i/Debounce_0/U0/counter_reg[12]_i_1_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.417 r  Lab5_i/Debounce_0/U0/counter_reg[16]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.417    Lab5_i/Debounce_0/U0/counter_reg[16]_i_1_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.531 r  Lab5_i/Debounce_0/U0/counter_reg[20]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.531    Lab5_i/Debounce_0/U0/counter_reg[20]_i_1_n_0
-    SLICE_X40Y32         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.645 r  Lab5_i/Debounce_0/U0/counter_reg[24]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.645    Lab5_i/Debounce_0/U0/counter_reg[24]_i_1_n_0
-    SLICE_X40Y33         CARRY4 (Prop_carry4_CI_O[2])
-                                                      0.239     5.884 r  Lab5_i/Debounce_0/U0/counter_reg[28]_i_1/O[2]
-                         net (fo=1, routed)           0.000     5.884    Lab5_i/Debounce_0/U0/counter_reg[28]_i_1_n_5
-    SLICE_X40Y33         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[30]/D
+    SLICE_X41Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
+                         net (fo=4, routed)           0.957     4.457    Lab5_i/Debounce_0/U0/counter_reg[2]
+    SLICE_X42Y28         LUT2 (Prop_lut2_I0_O)        0.124     4.581 r  Lab5_i/Debounce_0/U0/counter0_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.581    Lab5_i/Debounce_0/U0/counter0_carry_i_7_n_0
+    SLICE_X42Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     5.114 r  Lab5_i/Debounce_0/U0/counter0_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.114    Lab5_i/Debounce_0/U0/counter0_carry_n_0
+    SLICE_X42Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.231 r  Lab5_i/Debounce_0/U0/counter0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.231    Lab5_i/Debounce_0/U0/counter0_carry__0_n_0
+    SLICE_X42Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.348 r  Lab5_i/Debounce_0/U0/counter0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.348    Lab5_i/Debounce_0/U0/counter0_carry__1_n_0
+    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.465 r  Lab5_i/Debounce_0/U0/counter0_carry__2/CO[3]
+                         net (fo=32, routed)          1.121     6.587    Lab5_i/Debounce_0/U0/sel
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[6]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_1 rise edge)
@@ -426,29 +656,29 @@ Slack (MET) :             7.054ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
                          net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.569    12.761    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y33         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[30]/C
-                         clock pessimism              0.269    13.030    
-                         clock uncertainty           -0.154    12.876    
-    SLICE_X40Y33         FDRE (Setup_fdre_C_D)        0.062    12.938    Lab5_i/Debounce_0/U0/counter_reg[30]
+                         net (fo=32, routed)          1.562    12.754    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[6]/C
+                         clock pessimism              0.269    13.023    
+                         clock uncertainty           -0.154    12.869    
+    SLICE_X41Y27         FDRE (Setup_fdre_C_CE)      -0.016    12.853    Lab5_i/Debounce_0/U0/counter_reg[6]
   -------------------------------------------------------------------
-                         required time                         12.938    
-                         arrival time                          -5.884    
+                         required time                         12.853    
+                         arrival time                          -6.587    
   -------------------------------------------------------------------
-                         slack                                  7.054    
+                         slack                                  6.266    
 
-Slack (MET) :             7.070ns  (required time - arrival time)
+Slack (MET) :             6.266ns  (required time - arrival time)
   Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[28]/D
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[7]/CE
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_1
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        2.824ns  (logic 1.885ns (66.753%)  route 0.939ns (33.247%))
-  Logic Levels:           8  (CARRY4=8)
-  Clock Path Skew:        -0.014ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.761ns = ( 12.761 - 10.000 ) 
+  Data Path Delay:        3.543ns  (logic 1.464ns (41.326%)  route 2.079ns (58.674%))
+  Logic Levels:           5  (CARRY4=4 LUT2=1)
+  Clock Path Skew:        -0.021ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.754ns = ( 12.754 - 10.000 ) 
     Source Clock Delay      (SCD):    3.044ns
     Clock Pessimism Removal (CPR):    0.269ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -465,35 +695,25 @@ Slack (MET) :             7.070ns  (required time - arrival time)
                          net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
                          net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
-                         net (fo=2, routed)           0.939     4.439    Lab5_i/Debounce_0/U0/counter_reg[2]
-    SLICE_X40Y26         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     4.961 r  Lab5_i/Debounce_0/U0/counter_reg[0]_i_2/CO[3]
-                         net (fo=1, routed)           0.000     4.961    Lab5_i/Debounce_0/U0/counter_reg[0]_i_2_n_0
-    SLICE_X40Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.075 r  Lab5_i/Debounce_0/U0/counter_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.075    Lab5_i/Debounce_0/U0/counter_reg[4]_i_1_n_0
-    SLICE_X40Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.189 r  Lab5_i/Debounce_0/U0/counter_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.189    Lab5_i/Debounce_0/U0/counter_reg[8]_i_1_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.303 r  Lab5_i/Debounce_0/U0/counter_reg[12]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.303    Lab5_i/Debounce_0/U0/counter_reg[12]_i_1_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.417 r  Lab5_i/Debounce_0/U0/counter_reg[16]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.417    Lab5_i/Debounce_0/U0/counter_reg[16]_i_1_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.531 r  Lab5_i/Debounce_0/U0/counter_reg[20]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.531    Lab5_i/Debounce_0/U0/counter_reg[20]_i_1_n_0
-    SLICE_X40Y32         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.645 r  Lab5_i/Debounce_0/U0/counter_reg[24]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.645    Lab5_i/Debounce_0/U0/counter_reg[24]_i_1_n_0
-    SLICE_X40Y33         CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.223     5.868 r  Lab5_i/Debounce_0/U0/counter_reg[28]_i_1/O[0]
-                         net (fo=1, routed)           0.000     5.868    Lab5_i/Debounce_0/U0/counter_reg[28]_i_1_n_7
-    SLICE_X40Y33         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[28]/D
+    SLICE_X41Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
+                         net (fo=4, routed)           0.957     4.457    Lab5_i/Debounce_0/U0/counter_reg[2]
+    SLICE_X42Y28         LUT2 (Prop_lut2_I0_O)        0.124     4.581 r  Lab5_i/Debounce_0/U0/counter0_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.581    Lab5_i/Debounce_0/U0/counter0_carry_i_7_n_0
+    SLICE_X42Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     5.114 r  Lab5_i/Debounce_0/U0/counter0_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.114    Lab5_i/Debounce_0/U0/counter0_carry_n_0
+    SLICE_X42Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.231 r  Lab5_i/Debounce_0/U0/counter0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.231    Lab5_i/Debounce_0/U0/counter0_carry__0_n_0
+    SLICE_X42Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.348 r  Lab5_i/Debounce_0/U0/counter0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.348    Lab5_i/Debounce_0/U0/counter0_carry__1_n_0
+    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.465 r  Lab5_i/Debounce_0/U0/counter0_carry__2/CO[3]
+                         net (fo=32, routed)          1.121     6.587    Lab5_i/Debounce_0/U0/sel
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[7]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_1 rise edge)
@@ -501,29 +721,29 @@ Slack (MET) :             7.070ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
                          net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.569    12.761    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y33         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[28]/C
-                         clock pessimism              0.269    13.030    
-                         clock uncertainty           -0.154    12.876    
-    SLICE_X40Y33         FDRE (Setup_fdre_C_D)        0.062    12.938    Lab5_i/Debounce_0/U0/counter_reg[28]
+                         net (fo=32, routed)          1.562    12.754    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[7]/C
+                         clock pessimism              0.269    13.023    
+                         clock uncertainty           -0.154    12.869    
+    SLICE_X41Y27         FDRE (Setup_fdre_C_CE)      -0.016    12.853    Lab5_i/Debounce_0/U0/counter_reg[7]
   -------------------------------------------------------------------
-                         required time                         12.938    
-                         arrival time                          -5.868    
+                         required time                         12.853    
+                         arrival time                          -6.587    
   -------------------------------------------------------------------
-                         slack                                  7.070    
+                         slack                                  6.266    
 
-Slack (MET) :             7.072ns  (required time - arrival time)
+Slack (MET) :             6.418ns  (required time - arrival time)
   Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[25]/D
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[10]/CE
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_1
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        2.821ns  (logic 1.882ns (66.717%)  route 0.939ns (33.283%))
-  Logic Levels:           7  (CARRY4=7)
-  Clock Path Skew:        -0.015ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.760ns = ( 12.760 - 10.000 ) 
+  Data Path Delay:        3.393ns  (logic 1.464ns (43.150%)  route 1.929ns (56.850%))
+  Logic Levels:           5  (CARRY4=4 LUT2=1)
+  Clock Path Skew:        -0.019ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.757ns = ( 12.757 - 10.000 ) 
     Source Clock Delay      (SCD):    3.044ns
     Clock Pessimism Removal (CPR):    0.269ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -540,32 +760,25 @@ Slack (MET) :             7.072ns  (required time - arrival time)
                          net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
                          net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
-                         net (fo=2, routed)           0.939     4.439    Lab5_i/Debounce_0/U0/counter_reg[2]
-    SLICE_X40Y26         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     4.961 r  Lab5_i/Debounce_0/U0/counter_reg[0]_i_2/CO[3]
-                         net (fo=1, routed)           0.000     4.961    Lab5_i/Debounce_0/U0/counter_reg[0]_i_2_n_0
-    SLICE_X40Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.075 r  Lab5_i/Debounce_0/U0/counter_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.075    Lab5_i/Debounce_0/U0/counter_reg[4]_i_1_n_0
-    SLICE_X40Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.189 r  Lab5_i/Debounce_0/U0/counter_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.189    Lab5_i/Debounce_0/U0/counter_reg[8]_i_1_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.303 r  Lab5_i/Debounce_0/U0/counter_reg[12]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.303    Lab5_i/Debounce_0/U0/counter_reg[12]_i_1_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.417 r  Lab5_i/Debounce_0/U0/counter_reg[16]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.417    Lab5_i/Debounce_0/U0/counter_reg[16]_i_1_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.531 r  Lab5_i/Debounce_0/U0/counter_reg[20]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.531    Lab5_i/Debounce_0/U0/counter_reg[20]_i_1_n_0
-    SLICE_X40Y32         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     5.865 r  Lab5_i/Debounce_0/U0/counter_reg[24]_i_1/O[1]
-                         net (fo=1, routed)           0.000     5.865    Lab5_i/Debounce_0/U0/counter_reg[24]_i_1_n_6
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[25]/D
+    SLICE_X41Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
+                         net (fo=4, routed)           0.957     4.457    Lab5_i/Debounce_0/U0/counter_reg[2]
+    SLICE_X42Y28         LUT2 (Prop_lut2_I0_O)        0.124     4.581 r  Lab5_i/Debounce_0/U0/counter0_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.581    Lab5_i/Debounce_0/U0/counter0_carry_i_7_n_0
+    SLICE_X42Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     5.114 r  Lab5_i/Debounce_0/U0/counter0_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.114    Lab5_i/Debounce_0/U0/counter0_carry_n_0
+    SLICE_X42Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.231 r  Lab5_i/Debounce_0/U0/counter0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.231    Lab5_i/Debounce_0/U0/counter0_carry__0_n_0
+    SLICE_X42Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.348 r  Lab5_i/Debounce_0/U0/counter0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.348    Lab5_i/Debounce_0/U0/counter0_carry__1_n_0
+    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.465 r  Lab5_i/Debounce_0/U0/counter0_carry__2/CO[3]
+                         net (fo=32, routed)          0.971     6.437    Lab5_i/Debounce_0/U0/sel
+    SLICE_X41Y28         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[10]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_1 rise edge)
@@ -573,29 +786,29 @@ Slack (MET) :             7.072ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
                          net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.568    12.760    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[25]/C
-                         clock pessimism              0.269    13.029    
-                         clock uncertainty           -0.154    12.875    
-    SLICE_X40Y32         FDRE (Setup_fdre_C_D)        0.062    12.937    Lab5_i/Debounce_0/U0/counter_reg[25]
+                         net (fo=32, routed)          1.564    12.756    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y28         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[10]/C
+                         clock pessimism              0.269    13.025    
+                         clock uncertainty           -0.154    12.871    
+    SLICE_X41Y28         FDRE (Setup_fdre_C_CE)      -0.016    12.855    Lab5_i/Debounce_0/U0/counter_reg[10]
   -------------------------------------------------------------------
-                         required time                         12.937    
-                         arrival time                          -5.865    
+                         required time                         12.855    
+                         arrival time                          -6.437    
   -------------------------------------------------------------------
-                         slack                                  7.072    
+                         slack                                  6.418    
 
-Slack (MET) :             7.093ns  (required time - arrival time)
+Slack (MET) :             6.418ns  (required time - arrival time)
   Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[27]/D
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[11]/CE
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_1
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        2.800ns  (logic 1.861ns (66.468%)  route 0.939ns (33.532%))
-  Logic Levels:           7  (CARRY4=7)
-  Clock Path Skew:        -0.015ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.760ns = ( 12.760 - 10.000 ) 
+  Data Path Delay:        3.393ns  (logic 1.464ns (43.150%)  route 1.929ns (56.850%))
+  Logic Levels:           5  (CARRY4=4 LUT2=1)
+  Clock Path Skew:        -0.019ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.757ns = ( 12.757 - 10.000 ) 
     Source Clock Delay      (SCD):    3.044ns
     Clock Pessimism Removal (CPR):    0.269ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -612,32 +825,25 @@ Slack (MET) :             7.093ns  (required time - arrival time)
                          net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
                          net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
-                         net (fo=2, routed)           0.939     4.439    Lab5_i/Debounce_0/U0/counter_reg[2]
-    SLICE_X40Y26         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     4.961 r  Lab5_i/Debounce_0/U0/counter_reg[0]_i_2/CO[3]
-                         net (fo=1, routed)           0.000     4.961    Lab5_i/Debounce_0/U0/counter_reg[0]_i_2_n_0
-    SLICE_X40Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.075 r  Lab5_i/Debounce_0/U0/counter_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.075    Lab5_i/Debounce_0/U0/counter_reg[4]_i_1_n_0
-    SLICE_X40Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.189 r  Lab5_i/Debounce_0/U0/counter_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.189    Lab5_i/Debounce_0/U0/counter_reg[8]_i_1_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.303 r  Lab5_i/Debounce_0/U0/counter_reg[12]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.303    Lab5_i/Debounce_0/U0/counter_reg[12]_i_1_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.417 r  Lab5_i/Debounce_0/U0/counter_reg[16]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.417    Lab5_i/Debounce_0/U0/counter_reg[16]_i_1_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.531 r  Lab5_i/Debounce_0/U0/counter_reg[20]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.531    Lab5_i/Debounce_0/U0/counter_reg[20]_i_1_n_0
-    SLICE_X40Y32         CARRY4 (Prop_carry4_CI_O[3])
-                                                      0.313     5.844 r  Lab5_i/Debounce_0/U0/counter_reg[24]_i_1/O[3]
-                         net (fo=1, routed)           0.000     5.844    Lab5_i/Debounce_0/U0/counter_reg[24]_i_1_n_4
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[27]/D
+    SLICE_X41Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
+                         net (fo=4, routed)           0.957     4.457    Lab5_i/Debounce_0/U0/counter_reg[2]
+    SLICE_X42Y28         LUT2 (Prop_lut2_I0_O)        0.124     4.581 r  Lab5_i/Debounce_0/U0/counter0_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.581    Lab5_i/Debounce_0/U0/counter0_carry_i_7_n_0
+    SLICE_X42Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     5.114 r  Lab5_i/Debounce_0/U0/counter0_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.114    Lab5_i/Debounce_0/U0/counter0_carry_n_0
+    SLICE_X42Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.231 r  Lab5_i/Debounce_0/U0/counter0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.231    Lab5_i/Debounce_0/U0/counter0_carry__0_n_0
+    SLICE_X42Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.348 r  Lab5_i/Debounce_0/U0/counter0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.348    Lab5_i/Debounce_0/U0/counter0_carry__1_n_0
+    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.465 r  Lab5_i/Debounce_0/U0/counter0_carry__2/CO[3]
+                         net (fo=32, routed)          0.971     6.437    Lab5_i/Debounce_0/U0/sel
+    SLICE_X41Y28         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[11]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_1 rise edge)
@@ -645,298 +851,16 @@ Slack (MET) :             7.093ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
                          net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.568    12.760    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[27]/C
-                         clock pessimism              0.269    13.029    
-                         clock uncertainty           -0.154    12.875    
-    SLICE_X40Y32         FDRE (Setup_fdre_C_D)        0.062    12.937    Lab5_i/Debounce_0/U0/counter_reg[27]
+                         net (fo=32, routed)          1.564    12.756    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y28         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[11]/C
+                         clock pessimism              0.269    13.025    
+                         clock uncertainty           -0.154    12.871    
+    SLICE_X41Y28         FDRE (Setup_fdre_C_CE)      -0.016    12.855    Lab5_i/Debounce_0/U0/counter_reg[11]
   -------------------------------------------------------------------
-                         required time                         12.937    
-                         arrival time                          -5.844    
+                         required time                         12.855    
+                         arrival time                          -6.437    
   -------------------------------------------------------------------
-                         slack                                  7.093    
-
-Slack (MET) :             7.167ns  (required time - arrival time)
-  Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[26]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_1
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        2.726ns  (logic 1.787ns (65.557%)  route 0.939ns (34.443%))
-  Logic Levels:           7  (CARRY4=7)
-  Clock Path Skew:        -0.015ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.760ns = ( 12.760 - 10.000 ) 
-    Source Clock Delay      (SCD):    3.044ns
-    Clock Pessimism Removal (CPR):    0.269ns
-  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.300ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
-                         net (fo=2, routed)           0.939     4.439    Lab5_i/Debounce_0/U0/counter_reg[2]
-    SLICE_X40Y26         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     4.961 r  Lab5_i/Debounce_0/U0/counter_reg[0]_i_2/CO[3]
-                         net (fo=1, routed)           0.000     4.961    Lab5_i/Debounce_0/U0/counter_reg[0]_i_2_n_0
-    SLICE_X40Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.075 r  Lab5_i/Debounce_0/U0/counter_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.075    Lab5_i/Debounce_0/U0/counter_reg[4]_i_1_n_0
-    SLICE_X40Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.189 r  Lab5_i/Debounce_0/U0/counter_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.189    Lab5_i/Debounce_0/U0/counter_reg[8]_i_1_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.303 r  Lab5_i/Debounce_0/U0/counter_reg[12]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.303    Lab5_i/Debounce_0/U0/counter_reg[12]_i_1_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.417 r  Lab5_i/Debounce_0/U0/counter_reg[16]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.417    Lab5_i/Debounce_0/U0/counter_reg[16]_i_1_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.531 r  Lab5_i/Debounce_0/U0/counter_reg[20]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.531    Lab5_i/Debounce_0/U0/counter_reg[20]_i_1_n_0
-    SLICE_X40Y32         CARRY4 (Prop_carry4_CI_O[2])
-                                                      0.239     5.770 r  Lab5_i/Debounce_0/U0/counter_reg[24]_i_1/O[2]
-                         net (fo=1, routed)           0.000     5.770    Lab5_i/Debounce_0/U0/counter_reg[24]_i_1_n_5
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[26]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_1 rise edge)
-                                                     10.000    10.000 r  
-    PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.568    12.760    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[26]/C
-                         clock pessimism              0.269    13.029    
-                         clock uncertainty           -0.154    12.875    
-    SLICE_X40Y32         FDRE (Setup_fdre_C_D)        0.062    12.937    Lab5_i/Debounce_0/U0/counter_reg[26]
-  -------------------------------------------------------------------
-                         required time                         12.937    
-                         arrival time                          -5.770    
-  -------------------------------------------------------------------
-                         slack                                  7.167    
-
-Slack (MET) :             7.183ns  (required time - arrival time)
-  Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[24]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_1
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        2.710ns  (logic 1.771ns (65.354%)  route 0.939ns (34.646%))
-  Logic Levels:           7  (CARRY4=7)
-  Clock Path Skew:        -0.015ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.760ns = ( 12.760 - 10.000 ) 
-    Source Clock Delay      (SCD):    3.044ns
-    Clock Pessimism Removal (CPR):    0.269ns
-  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.300ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
-                         net (fo=2, routed)           0.939     4.439    Lab5_i/Debounce_0/U0/counter_reg[2]
-    SLICE_X40Y26         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     4.961 r  Lab5_i/Debounce_0/U0/counter_reg[0]_i_2/CO[3]
-                         net (fo=1, routed)           0.000     4.961    Lab5_i/Debounce_0/U0/counter_reg[0]_i_2_n_0
-    SLICE_X40Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.075 r  Lab5_i/Debounce_0/U0/counter_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.075    Lab5_i/Debounce_0/U0/counter_reg[4]_i_1_n_0
-    SLICE_X40Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.189 r  Lab5_i/Debounce_0/U0/counter_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.189    Lab5_i/Debounce_0/U0/counter_reg[8]_i_1_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.303 r  Lab5_i/Debounce_0/U0/counter_reg[12]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.303    Lab5_i/Debounce_0/U0/counter_reg[12]_i_1_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.417 r  Lab5_i/Debounce_0/U0/counter_reg[16]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.417    Lab5_i/Debounce_0/U0/counter_reg[16]_i_1_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.531 r  Lab5_i/Debounce_0/U0/counter_reg[20]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.531    Lab5_i/Debounce_0/U0/counter_reg[20]_i_1_n_0
-    SLICE_X40Y32         CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.223     5.754 r  Lab5_i/Debounce_0/U0/counter_reg[24]_i_1/O[0]
-                         net (fo=1, routed)           0.000     5.754    Lab5_i/Debounce_0/U0/counter_reg[24]_i_1_n_7
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[24]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_1 rise edge)
-                                                     10.000    10.000 r  
-    PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.568    12.760    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[24]/C
-                         clock pessimism              0.269    13.029    
-                         clock uncertainty           -0.154    12.875    
-    SLICE_X40Y32         FDRE (Setup_fdre_C_D)        0.062    12.937    Lab5_i/Debounce_0/U0/counter_reg[24]
-  -------------------------------------------------------------------
-                         required time                         12.937    
-                         arrival time                          -5.754    
-  -------------------------------------------------------------------
-                         slack                                  7.183    
-
-Slack (MET) :             7.184ns  (required time - arrival time)
-  Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[21]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_1
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        2.707ns  (logic 1.768ns (65.316%)  route 0.939ns (34.684%))
-  Logic Levels:           6  (CARRY4=6)
-  Clock Path Skew:        -0.017ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.758ns = ( 12.759 - 10.000 ) 
-    Source Clock Delay      (SCD):    3.044ns
-    Clock Pessimism Removal (CPR):    0.269ns
-  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.300ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
-                         net (fo=2, routed)           0.939     4.439    Lab5_i/Debounce_0/U0/counter_reg[2]
-    SLICE_X40Y26         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     4.961 r  Lab5_i/Debounce_0/U0/counter_reg[0]_i_2/CO[3]
-                         net (fo=1, routed)           0.000     4.961    Lab5_i/Debounce_0/U0/counter_reg[0]_i_2_n_0
-    SLICE_X40Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.075 r  Lab5_i/Debounce_0/U0/counter_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.075    Lab5_i/Debounce_0/U0/counter_reg[4]_i_1_n_0
-    SLICE_X40Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.189 r  Lab5_i/Debounce_0/U0/counter_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.189    Lab5_i/Debounce_0/U0/counter_reg[8]_i_1_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.303 r  Lab5_i/Debounce_0/U0/counter_reg[12]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.303    Lab5_i/Debounce_0/U0/counter_reg[12]_i_1_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.417 r  Lab5_i/Debounce_0/U0/counter_reg[16]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.417    Lab5_i/Debounce_0/U0/counter_reg[16]_i_1_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     5.751 r  Lab5_i/Debounce_0/U0/counter_reg[20]_i_1/O[1]
-                         net (fo=1, routed)           0.000     5.751    Lab5_i/Debounce_0/U0/counter_reg[20]_i_1_n_6
-    SLICE_X40Y31         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[21]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_1 rise edge)
-                                                     10.000    10.000 r  
-    PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.566    12.758    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y31         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[21]/C
-                         clock pessimism              0.269    13.027    
-                         clock uncertainty           -0.154    12.873    
-    SLICE_X40Y31         FDRE (Setup_fdre_C_D)        0.062    12.935    Lab5_i/Debounce_0/U0/counter_reg[21]
-  -------------------------------------------------------------------
-                         required time                         12.935    
-                         arrival time                          -5.751    
-  -------------------------------------------------------------------
-                         slack                                  7.184    
-
-Slack (MET) :             7.205ns  (required time - arrival time)
-  Source:                 Lab5_i/Debounce_0/U0/counter_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[23]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_1
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (clk_fpga_1 rise@10.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        2.686ns  (logic 1.747ns (65.044%)  route 0.939ns (34.956%))
-  Logic Levels:           6  (CARRY4=6)
-  Clock Path Skew:        -0.017ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.758ns = ( 12.759 - 10.000 ) 
-    Source Clock Delay      (SCD):    3.044ns
-    Clock Pessimism Removal (CPR):    0.269ns
-  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.300ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           1.207     1.207    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     1.308 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.736     3.044    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y26         FDRE (Prop_fdre_C_Q)         0.456     3.500 r  Lab5_i/Debounce_0/U0/counter_reg[2]/Q
-                         net (fo=2, routed)           0.939     4.439    Lab5_i/Debounce_0/U0/counter_reg[2]
-    SLICE_X40Y26         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     4.961 r  Lab5_i/Debounce_0/U0/counter_reg[0]_i_2/CO[3]
-                         net (fo=1, routed)           0.000     4.961    Lab5_i/Debounce_0/U0/counter_reg[0]_i_2_n_0
-    SLICE_X40Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.075 r  Lab5_i/Debounce_0/U0/counter_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.075    Lab5_i/Debounce_0/U0/counter_reg[4]_i_1_n_0
-    SLICE_X40Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.189 r  Lab5_i/Debounce_0/U0/counter_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.189    Lab5_i/Debounce_0/U0/counter_reg[8]_i_1_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.303 r  Lab5_i/Debounce_0/U0/counter_reg[12]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.303    Lab5_i/Debounce_0/U0/counter_reg[12]_i_1_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     5.417 r  Lab5_i/Debounce_0/U0/counter_reg[16]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     5.417    Lab5_i/Debounce_0/U0/counter_reg[16]_i_1_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_O[3])
-                                                      0.313     5.730 r  Lab5_i/Debounce_0/U0/counter_reg[20]_i_1/O[3]
-                         net (fo=1, routed)           0.000     5.730    Lab5_i/Debounce_0/U0/counter_reg[20]_i_1_n_4
-    SLICE_X40Y31         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[23]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_1 rise edge)
-                                                     10.000    10.000 r  
-    PS7_X0Y0             PS7                          0.000    10.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           1.101    11.101    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    11.192 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          1.566    12.758    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y31         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[23]/C
-                         clock pessimism              0.269    13.027    
-                         clock uncertainty           -0.154    12.873    
-    SLICE_X40Y31         FDRE (Setup_fdre_C_D)        0.062    12.935    Lab5_i/Debounce_0/U0/counter_reg[23]
-  -------------------------------------------------------------------
-                         required time                         12.935    
-                         arrival time                          -5.730    
-  -------------------------------------------------------------------
-                         slack                                  7.205    
+                         slack                                  6.418    
 
 
 
@@ -944,257 +868,15 @@ Slack (MET) :             7.205ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.330ns  (arrival time - required time)
-  Source:                 Lab5_i/Debounce_0/U0/counter_reg[23]/C
+Slack (MET) :             0.264ns  (arrival time - required time)
+  Source:                 Lab5_i/Debounce_0/U0/counter_reg[15]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[23]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_1
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        0.435ns  (logic 0.249ns (57.277%)  route 0.186ns (42.723%))
-  Logic Levels:           1  (CARRY4=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.222ns
-    Source Clock Delay      (SCD):    0.926ns
-    Clock Pessimism Removal (CPR):    0.296ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.585     0.925    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y31         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[23]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y31         FDRE (Prop_fdre_C_Q)         0.141     1.066 r  Lab5_i/Debounce_0/U0/counter_reg[23]/Q
-                         net (fo=3, routed)           0.186     1.252    Lab5_i/Debounce_0/U0/counter_reg[23]
-    SLICE_X40Y31         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.108     1.360 r  Lab5_i/Debounce_0/U0/counter_reg[20]_i_1/O[3]
-                         net (fo=1, routed)           0.000     1.360    Lab5_i/Debounce_0/U0/counter_reg[20]_i_1_n_4
-    SLICE_X40Y31         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[23]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.852     1.222    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y31         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[23]/C
-                         clock pessimism             -0.296     0.926    
-    SLICE_X40Y31         FDRE (Hold_fdre_C_D)         0.105     1.031    Lab5_i/Debounce_0/U0/counter_reg[23]
-  -------------------------------------------------------------------
-                         required time                         -1.031    
-                         arrival time                           1.360    
-  -------------------------------------------------------------------
-                         slack                                  0.330    
-
-Slack (MET) :             0.330ns  (arrival time - required time)
-  Source:                 Lab5_i/Debounce_0/U0/counter_reg[27]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[27]/D
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[15]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_1
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        0.435ns  (logic 0.249ns (57.277%)  route 0.186ns (42.723%))
-  Logic Levels:           1  (CARRY4=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.223ns
-    Source Clock Delay      (SCD):    0.927ns
-    Clock Pessimism Removal (CPR):    0.296ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.586     0.927    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[27]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y32         FDRE (Prop_fdre_C_Q)         0.141     1.067 r  Lab5_i/Debounce_0/U0/counter_reg[27]/Q
-                         net (fo=3, routed)           0.186     1.253    Lab5_i/Debounce_0/U0/counter_reg[27]
-    SLICE_X40Y32         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.108     1.361 r  Lab5_i/Debounce_0/U0/counter_reg[24]_i_1/O[3]
-                         net (fo=1, routed)           0.000     1.361    Lab5_i/Debounce_0/U0/counter_reg[24]_i_1_n_4
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[27]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.853     1.223    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[27]/C
-                         clock pessimism             -0.296     0.927    
-    SLICE_X40Y32         FDRE (Hold_fdre_C_D)         0.105     1.031    Lab5_i/Debounce_0/U0/counter_reg[27]
-  -------------------------------------------------------------------
-                         required time                         -1.031    
-                         arrival time                           1.361    
-  -------------------------------------------------------------------
-                         slack                                  0.330    
-
-Slack (MET) :             0.336ns  (arrival time - required time)
-  Source:                 Lab5_i/Debounce_0/U0/counter_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[0]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_1
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        0.441ns  (logic 0.256ns (58.077%)  route 0.185ns (41.923%))
-  Logic Levels:           2  (CARRY4=1 LUT1=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.216ns
-    Source Clock Delay      (SCD):    0.920ns
-    Clock Pessimism Removal (CPR):    0.295ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.580     0.920    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y26         FDRE (Prop_fdre_C_Q)         0.141     1.061 f  Lab5_i/Debounce_0/U0/counter_reg[0]/Q
-                         net (fo=3, routed)           0.185     1.246    Lab5_i/Debounce_0/U0/counter_reg[0]
-    SLICE_X40Y26         LUT1 (Prop_lut1_I0_O)        0.045     1.291 r  Lab5_i/Debounce_0/U0/counter[0]_i_6/O
-                         net (fo=1, routed)           0.000     1.291    Lab5_i/Debounce_0/U0/counter[0]_i_6_n_0
-    SLICE_X40Y26         CARRY4 (Prop_carry4_S[0]_O[0])
-                                                      0.070     1.361 r  Lab5_i/Debounce_0/U0/counter_reg[0]_i_2/O[0]
-                         net (fo=1, routed)           0.000     1.361    Lab5_i/Debounce_0/U0/counter_reg[0]_i_2_n_7
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.846     1.216    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[0]/C
-                         clock pessimism             -0.295     0.921    
-    SLICE_X40Y26         FDRE (Hold_fdre_C_D)         0.105     1.026    Lab5_i/Debounce_0/U0/counter_reg[0]
-  -------------------------------------------------------------------
-                         required time                         -1.026    
-                         arrival time                           1.361    
-  -------------------------------------------------------------------
-                         slack                                  0.336    
-
-Slack (MET) :             0.338ns  (arrival time - required time)
-  Source:                 Lab5_i/Debounce_0/U0/counter_reg[20]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[20]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_1
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        0.443ns  (logic 0.256ns (57.743%)  route 0.187ns (42.257%))
-  Logic Levels:           1  (CARRY4=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.222ns
-    Source Clock Delay      (SCD):    0.926ns
-    Clock Pessimism Removal (CPR):    0.296ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.585     0.925    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y31         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[20]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y31         FDRE (Prop_fdre_C_Q)         0.141     1.066 r  Lab5_i/Debounce_0/U0/counter_reg[20]/Q
-                         net (fo=3, routed)           0.187     1.254    Lab5_i/Debounce_0/U0/counter_reg[20]
-    SLICE_X40Y31         CARRY4 (Prop_carry4_S[0]_O[0])
-                                                      0.115     1.369 r  Lab5_i/Debounce_0/U0/counter_reg[20]_i_1/O[0]
-                         net (fo=1, routed)           0.000     1.369    Lab5_i/Debounce_0/U0/counter_reg[20]_i_1_n_7
-    SLICE_X40Y31         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[20]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.852     1.222    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y31         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[20]/C
-                         clock pessimism             -0.296     0.926    
-    SLICE_X40Y31         FDRE (Hold_fdre_C_D)         0.105     1.031    Lab5_i/Debounce_0/U0/counter_reg[20]
-  -------------------------------------------------------------------
-                         required time                         -1.031    
-                         arrival time                           1.369    
-  -------------------------------------------------------------------
-                         slack                                  0.338    
-
-Slack (MET) :             0.338ns  (arrival time - required time)
-  Source:                 Lab5_i/Debounce_0/U0/counter_reg[8]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[8]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_1
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        0.443ns  (logic 0.256ns (57.725%)  route 0.187ns (42.275%))
-  Logic Levels:           1  (CARRY4=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.219ns
-    Source Clock Delay      (SCD):    0.923ns
-    Clock Pessimism Removal (CPR):    0.296ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.582     0.923    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y28         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[8]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y28         FDRE (Prop_fdre_C_Q)         0.141     1.064 r  Lab5_i/Debounce_0/U0/counter_reg[8]/Q
-                         net (fo=3, routed)           0.187     1.251    Lab5_i/Debounce_0/U0/counter_reg[8]
-    SLICE_X40Y28         CARRY4 (Prop_carry4_S[0]_O[0])
-                                                      0.115     1.366 r  Lab5_i/Debounce_0/U0/counter_reg[8]_i_1/O[0]
-                         net (fo=1, routed)           0.000     1.366    Lab5_i/Debounce_0/U0/counter_reg[8]_i_1_n_7
-    SLICE_X40Y28         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[8]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.849     1.219    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y28         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[8]/C
-                         clock pessimism             -0.296     0.923    
-    SLICE_X40Y28         FDRE (Hold_fdre_C_D)         0.105     1.028    Lab5_i/Debounce_0/U0/counter_reg[8]
-  -------------------------------------------------------------------
-                         required time                         -1.028    
-                         arrival time                           1.366    
-  -------------------------------------------------------------------
-                         slack                                  0.338    
-
-Slack (MET) :             0.339ns  (arrival time - required time)
-  Source:                 Lab5_i/Debounce_0/U0/counter_reg[12]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[12]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_1
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        0.444ns  (logic 0.256ns (57.717%)  route 0.188ns (42.283%))
+  Data Path Delay:        0.369ns  (logic 0.249ns (67.424%)  route 0.120ns (32.576%))
   Logic Levels:           1  (CARRY4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.220ns
@@ -1209,14 +891,14 @@ Slack (MET) :             0.339ns  (arrival time - required time)
                          net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
                          net (fo=32, routed)          0.583     0.924    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y29         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[12]/C
+    SLICE_X41Y29         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[15]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y29         FDRE (Prop_fdre_C_Q)         0.141     1.064 r  Lab5_i/Debounce_0/U0/counter_reg[12]/Q
-                         net (fo=3, routed)           0.188     1.252    Lab5_i/Debounce_0/U0/counter_reg[12]
-    SLICE_X40Y29         CARRY4 (Prop_carry4_S[0]_O[0])
-                                                      0.115     1.367 r  Lab5_i/Debounce_0/U0/counter_reg[12]_i_1/O[0]
-                         net (fo=1, routed)           0.000     1.367    Lab5_i/Debounce_0/U0/counter_reg[12]_i_1_n_7
-    SLICE_X40Y29         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[12]/D
+    SLICE_X41Y29         FDRE (Prop_fdre_C_Q)         0.141     1.064 r  Lab5_i/Debounce_0/U0/counter_reg[15]/Q
+                         net (fo=4, routed)           0.120     1.185    Lab5_i/Debounce_0/U0/counter_reg[15]
+    SLICE_X41Y29         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.293 r  Lab5_i/Debounce_0/U0/counter_reg[12]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.293    Lab5_i/Debounce_0/U0/counter_reg[12]_i_1_n_4
+    SLICE_X41Y29         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[15]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_1 rise edge)
@@ -1225,112 +907,16 @@ Slack (MET) :             0.339ns  (arrival time - required time)
                          net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
                          net (fo=32, routed)          0.850     1.220    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y29         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[12]/C
+    SLICE_X41Y29         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[15]/C
                          clock pessimism             -0.296     0.924    
-    SLICE_X40Y29         FDRE (Hold_fdre_C_D)         0.105     1.029    Lab5_i/Debounce_0/U0/counter_reg[12]
+    SLICE_X41Y29         FDRE (Hold_fdre_C_D)         0.105     1.029    Lab5_i/Debounce_0/U0/counter_reg[15]
   -------------------------------------------------------------------
                          required time                         -1.029    
-                         arrival time                           1.367    
+                         arrival time                           1.293    
   -------------------------------------------------------------------
-                         slack                                  0.339    
+                         slack                                  0.264    
 
-Slack (MET) :             0.339ns  (arrival time - required time)
-  Source:                 Lab5_i/Debounce_0/U0/counter_reg[16]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[16]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_1
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        0.444ns  (logic 0.256ns (57.717%)  route 0.188ns (42.283%))
-  Logic Levels:           1  (CARRY4=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.221ns
-    Source Clock Delay      (SCD):    0.925ns
-    Clock Pessimism Removal (CPR):    0.296ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.584     0.924    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y30         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[16]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y30         FDRE (Prop_fdre_C_Q)         0.141     1.066 r  Lab5_i/Debounce_0/U0/counter_reg[16]/Q
-                         net (fo=3, routed)           0.188     1.253    Lab5_i/Debounce_0/U0/counter_reg[16]
-    SLICE_X40Y30         CARRY4 (Prop_carry4_S[0]_O[0])
-                                                      0.115     1.368 r  Lab5_i/Debounce_0/U0/counter_reg[16]_i_1/O[0]
-                         net (fo=1, routed)           0.000     1.368    Lab5_i/Debounce_0/U0/counter_reg[16]_i_1_n_7
-    SLICE_X40Y30         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[16]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.851     1.221    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y30         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[16]/C
-                         clock pessimism             -0.296     0.925    
-    SLICE_X40Y30         FDRE (Hold_fdre_C_D)         0.105     1.030    Lab5_i/Debounce_0/U0/counter_reg[16]
-  -------------------------------------------------------------------
-                         required time                         -1.030    
-                         arrival time                           1.368    
-  -------------------------------------------------------------------
-                         slack                                  0.339    
-
-Slack (MET) :             0.339ns  (arrival time - required time)
-  Source:                 Lab5_i/Debounce_0/U0/counter_reg[11]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[11]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_1
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        0.444ns  (logic 0.249ns (56.082%)  route 0.195ns (43.918%))
-  Logic Levels:           1  (CARRY4=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.219ns
-    Source Clock Delay      (SCD):    0.923ns
-    Clock Pessimism Removal (CPR):    0.296ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.582     0.923    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y28         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[11]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y28         FDRE (Prop_fdre_C_Q)         0.141     1.064 r  Lab5_i/Debounce_0/U0/counter_reg[11]/Q
-                         net (fo=3, routed)           0.195     1.258    Lab5_i/Debounce_0/U0/counter_reg[11]
-    SLICE_X40Y28         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.108     1.366 r  Lab5_i/Debounce_0/U0/counter_reg[8]_i_1/O[3]
-                         net (fo=1, routed)           0.000     1.366    Lab5_i/Debounce_0/U0/counter_reg[8]_i_1_n_4
-    SLICE_X40Y28         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[11]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_1 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
-                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
-                         net (fo=32, routed)          0.849     1.219    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y28         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[11]/C
-                         clock pessimism             -0.296     0.923    
-    SLICE_X40Y28         FDRE (Hold_fdre_C_D)         0.105     1.028    Lab5_i/Debounce_0/U0/counter_reg[11]
-  -------------------------------------------------------------------
-                         required time                         -1.028    
-                         arrival time                           1.366    
-  -------------------------------------------------------------------
-                         slack                                  0.339    
-
-Slack (MET) :             0.339ns  (arrival time - required time)
+Slack (MET) :             0.264ns  (arrival time - required time)
   Source:                 Lab5_i/Debounce_0/U0/counter_reg[3]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            Lab5_i/Debounce_0/U0/counter_reg[3]/D
@@ -1338,7 +924,7 @@ Slack (MET) :             0.339ns  (arrival time - required time)
   Path Group:             clk_fpga_1
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        0.444ns  (logic 0.249ns (56.074%)  route 0.195ns (43.926%))
+  Data Path Delay:        0.369ns  (logic 0.249ns (67.424%)  route 0.120ns (32.576%))
   Logic Levels:           1  (CARRY4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.216ns
@@ -1353,14 +939,14 @@ Slack (MET) :             0.339ns  (arrival time - required time)
                          net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
                          net (fo=32, routed)          0.580     0.920    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[3]/C
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y26         FDRE (Prop_fdre_C_Q)         0.141     1.061 r  Lab5_i/Debounce_0/U0/counter_reg[3]/Q
-                         net (fo=3, routed)           0.195     1.257    Lab5_i/Debounce_0/U0/counter_reg[3]
-    SLICE_X40Y26         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.108     1.365 r  Lab5_i/Debounce_0/U0/counter_reg[0]_i_2/O[3]
-                         net (fo=1, routed)           0.000     1.365    Lab5_i/Debounce_0/U0/counter_reg[0]_i_2_n_4
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[3]/D
+    SLICE_X41Y26         FDRE (Prop_fdre_C_Q)         0.141     1.061 r  Lab5_i/Debounce_0/U0/counter_reg[3]/Q
+                         net (fo=5, routed)           0.120     1.182    Lab5_i/Debounce_0/U0/counter_reg[3]
+    SLICE_X41Y26         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.290 r  Lab5_i/Debounce_0/U0/counter_reg[0]_i_2/O[3]
+                         net (fo=1, routed)           0.000     1.290    Lab5_i/Debounce_0/U0/counter_reg[0]_i_2_n_4
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_1 rise edge)
@@ -1369,24 +955,264 @@ Slack (MET) :             0.339ns  (arrival time - required time)
                          net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
                          net (fo=32, routed)          0.846     1.216    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[3]/C
+    SLICE_X41Y26         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[3]/C
                          clock pessimism             -0.295     0.921    
-    SLICE_X40Y26         FDRE (Hold_fdre_C_D)         0.105     1.026    Lab5_i/Debounce_0/U0/counter_reg[3]
+    SLICE_X41Y26         FDRE (Hold_fdre_C_D)         0.105     1.026    Lab5_i/Debounce_0/U0/counter_reg[3]
   -------------------------------------------------------------------
                          required time                         -1.026    
-                         arrival time                           1.365    
+                         arrival time                           1.290    
   -------------------------------------------------------------------
-                         slack                                  0.339    
+                         slack                                  0.264    
 
-Slack (MET) :             0.340ns  (arrival time - required time)
-  Source:                 Lab5_i/Debounce_0/U0/counter_reg[24]/C
+Slack (MET) :             0.264ns  (arrival time - required time)
+  Source:                 Lab5_i/Debounce_0/U0/counter_reg[11]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Lab5_i/Debounce_0/U0/counter_reg[24]/D
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[11]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_1
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
-  Data Path Delay:        0.445ns  (logic 0.256ns (57.583%)  route 0.189ns (42.417%))
+  Data Path Delay:        0.369ns  (logic 0.249ns (67.424%)  route 0.120ns (32.576%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.219ns
+    Source Clock Delay      (SCD):    0.923ns
+    Clock Pessimism Removal (CPR):    0.296ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.582     0.923    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y28         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[11]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y28         FDRE (Prop_fdre_C_Q)         0.141     1.064 r  Lab5_i/Debounce_0/U0/counter_reg[11]/Q
+                         net (fo=4, routed)           0.120     1.184    Lab5_i/Debounce_0/U0/counter_reg[11]
+    SLICE_X41Y28         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.292 r  Lab5_i/Debounce_0/U0/counter_reg[8]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.292    Lab5_i/Debounce_0/U0/counter_reg[8]_i_1_n_4
+    SLICE_X41Y28         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.849     1.219    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y28         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[11]/C
+                         clock pessimism             -0.296     0.923    
+    SLICE_X41Y28         FDRE (Hold_fdre_C_D)         0.105     1.028    Lab5_i/Debounce_0/U0/counter_reg[11]
+  -------------------------------------------------------------------
+                         required time                         -1.028    
+                         arrival time                           1.292    
+  -------------------------------------------------------------------
+                         slack                                  0.264    
+
+Slack (MET) :             0.264ns  (arrival time - required time)
+  Source:                 Lab5_i/Debounce_0/U0/counter_reg[19]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[19]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_1
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
+  Data Path Delay:        0.369ns  (logic 0.249ns (67.424%)  route 0.120ns (32.576%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.221ns
+    Source Clock Delay      (SCD):    0.925ns
+    Clock Pessimism Removal (CPR):    0.296ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.584     0.924    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y30         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[19]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y30         FDRE (Prop_fdre_C_Q)         0.141     1.066 r  Lab5_i/Debounce_0/U0/counter_reg[19]/Q
+                         net (fo=4, routed)           0.120     1.186    Lab5_i/Debounce_0/U0/counter_reg[19]
+    SLICE_X41Y30         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.294 r  Lab5_i/Debounce_0/U0/counter_reg[16]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.294    Lab5_i/Debounce_0/U0/counter_reg[16]_i_1_n_4
+    SLICE_X41Y30         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[19]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.851     1.221    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y30         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[19]/C
+                         clock pessimism             -0.296     0.925    
+    SLICE_X41Y30         FDRE (Hold_fdre_C_D)         0.105     1.030    Lab5_i/Debounce_0/U0/counter_reg[19]
+  -------------------------------------------------------------------
+                         required time                         -1.030    
+                         arrival time                           1.294    
+  -------------------------------------------------------------------
+                         slack                                  0.264    
+
+Slack (MET) :             0.264ns  (arrival time - required time)
+  Source:                 Lab5_i/Debounce_0/U0/counter_reg[31]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[31]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_1
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
+  Data Path Delay:        0.369ns  (logic 0.249ns (67.424%)  route 0.120ns (32.576%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.224ns
+    Source Clock Delay      (SCD):    0.928ns
+    Clock Pessimism Removal (CPR):    0.296ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.587     0.928    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y33         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[31]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y33         FDRE (Prop_fdre_C_Q)         0.141     1.069 r  Lab5_i/Debounce_0/U0/counter_reg[31]/Q
+                         net (fo=5, routed)           0.120     1.189    Lab5_i/Debounce_0/U0/counter_reg[31]
+    SLICE_X41Y33         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.297 r  Lab5_i/Debounce_0/U0/counter_reg[28]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.297    Lab5_i/Debounce_0/U0/counter_reg[28]_i_1_n_4
+    SLICE_X41Y33         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.854     1.224    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y33         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[31]/C
+                         clock pessimism             -0.296     0.928    
+    SLICE_X41Y33         FDRE (Hold_fdre_C_D)         0.105     1.033    Lab5_i/Debounce_0/U0/counter_reg[31]
+  -------------------------------------------------------------------
+                         required time                         -1.033    
+                         arrival time                           1.297    
+  -------------------------------------------------------------------
+                         slack                                  0.264    
+
+Slack (MET) :             0.264ns  (arrival time - required time)
+  Source:                 Lab5_i/Debounce_0/U0/counter_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_1
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
+  Data Path Delay:        0.369ns  (logic 0.249ns (67.424%)  route 0.120ns (32.576%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.218ns
+    Source Clock Delay      (SCD):    0.923ns
+    Clock Pessimism Removal (CPR):    0.295ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.582     0.923    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y27         FDRE (Prop_fdre_C_Q)         0.141     1.064 r  Lab5_i/Debounce_0/U0/counter_reg[7]/Q
+                         net (fo=5, routed)           0.120     1.184    Lab5_i/Debounce_0/U0/counter_reg[7]
+    SLICE_X41Y27         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.292 r  Lab5_i/Debounce_0/U0/counter_reg[4]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.292    Lab5_i/Debounce_0/U0/counter_reg[4]_i_1_n_4
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.848     1.218    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[7]/C
+                         clock pessimism             -0.295     0.923    
+    SLICE_X41Y27         FDRE (Hold_fdre_C_D)         0.105     1.028    Lab5_i/Debounce_0/U0/counter_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -1.028    
+                         arrival time                           1.292    
+  -------------------------------------------------------------------
+                         slack                                  0.264    
+
+Slack (MET) :             0.264ns  (arrival time - required time)
+  Source:                 Lab5_i/Debounce_0/U0/counter_reg[23]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[23]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_1
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
+  Data Path Delay:        0.369ns  (logic 0.249ns (67.412%)  route 0.120ns (32.588%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.222ns
+    Source Clock Delay      (SCD):    0.926ns
+    Clock Pessimism Removal (CPR):    0.296ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.585     0.925    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y31         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[23]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y31         FDRE (Prop_fdre_C_Q)         0.141     1.066 r  Lab5_i/Debounce_0/U0/counter_reg[23]/Q
+                         net (fo=4, routed)           0.120     1.187    Lab5_i/Debounce_0/U0/counter_reg[23]
+    SLICE_X41Y31         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.295 r  Lab5_i/Debounce_0/U0/counter_reg[20]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.295    Lab5_i/Debounce_0/U0/counter_reg[20]_i_1_n_4
+    SLICE_X41Y31         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.852     1.222    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y31         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[23]/C
+                         clock pessimism             -0.296     0.926    
+    SLICE_X41Y31         FDRE (Hold_fdre_C_D)         0.105     1.031    Lab5_i/Debounce_0/U0/counter_reg[23]
+  -------------------------------------------------------------------
+                         required time                         -1.031    
+                         arrival time                           1.295    
+  -------------------------------------------------------------------
+                         slack                                  0.264    
+
+Slack (MET) :             0.264ns  (arrival time - required time)
+  Source:                 Lab5_i/Debounce_0/U0/counter_reg[27]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[27]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_1
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
+  Data Path Delay:        0.369ns  (logic 0.249ns (67.412%)  route 0.120ns (32.588%))
   Logic Levels:           1  (CARRY4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.223ns
@@ -1401,14 +1227,14 @@ Slack (MET) :             0.340ns  (arrival time - required time)
                          net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
                          net (fo=32, routed)          0.586     0.927    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[24]/C
+    SLICE_X41Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[27]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y32         FDRE (Prop_fdre_C_Q)         0.141     1.067 r  Lab5_i/Debounce_0/U0/counter_reg[24]/Q
-                         net (fo=3, routed)           0.189     1.256    Lab5_i/Debounce_0/U0/counter_reg[24]
-    SLICE_X40Y32         CARRY4 (Prop_carry4_S[0]_O[0])
-                                                      0.115     1.371 r  Lab5_i/Debounce_0/U0/counter_reg[24]_i_1/O[0]
-                         net (fo=1, routed)           0.000     1.371    Lab5_i/Debounce_0/U0/counter_reg[24]_i_1_n_7
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[24]/D
+    SLICE_X41Y32         FDRE (Prop_fdre_C_Q)         0.141     1.067 r  Lab5_i/Debounce_0/U0/counter_reg[27]/Q
+                         net (fo=4, routed)           0.120     1.188    Lab5_i/Debounce_0/U0/counter_reg[27]
+    SLICE_X41Y32         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.296 r  Lab5_i/Debounce_0/U0/counter_reg[24]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.296    Lab5_i/Debounce_0/U0/counter_reg[24]_i_1_n_4
+    SLICE_X41Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[27]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_1 rise edge)
@@ -1417,14 +1243,110 @@ Slack (MET) :             0.340ns  (arrival time - required time)
                          net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
                          net (fo=32, routed)          0.853     1.223    Lab5_i/Debounce_0/U0/clk_in
-    SLICE_X40Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[24]/C
+    SLICE_X41Y32         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[27]/C
                          clock pessimism             -0.296     0.927    
-    SLICE_X40Y32         FDRE (Hold_fdre_C_D)         0.105     1.031    Lab5_i/Debounce_0/U0/counter_reg[24]
+    SLICE_X41Y32         FDRE (Hold_fdre_C_D)         0.105     1.031    Lab5_i/Debounce_0/U0/counter_reg[27]
   -------------------------------------------------------------------
                          required time                         -1.031    
-                         arrival time                           1.371    
+                         arrival time                           1.296    
   -------------------------------------------------------------------
-                         slack                                  0.340    
+                         slack                                  0.264    
+
+Slack (MET) :             0.266ns  (arrival time - required time)
+  Source:                 Lab5_i/Debounce_0/U0/counter_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_1
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
+  Data Path Delay:        0.371ns  (logic 0.256ns (68.984%)  route 0.115ns (31.016%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.218ns
+    Source Clock Delay      (SCD):    0.923ns
+    Clock Pessimism Removal (CPR):    0.295ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.582     0.923    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y27         FDRE (Prop_fdre_C_Q)         0.141     1.064 r  Lab5_i/Debounce_0/U0/counter_reg[4]/Q
+                         net (fo=4, routed)           0.115     1.179    Lab5_i/Debounce_0/U0/counter_reg[4]
+    SLICE_X41Y27         CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.115     1.294 r  Lab5_i/Debounce_0/U0/counter_reg[4]_i_1/O[0]
+                         net (fo=1, routed)           0.000     1.294    Lab5_i/Debounce_0/U0/counter_reg[4]_i_1_n_7
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.848     1.218    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y27         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[4]/C
+                         clock pessimism             -0.295     0.923    
+    SLICE_X41Y27         FDRE (Hold_fdre_C_D)         0.105     1.028    Lab5_i/Debounce_0/U0/counter_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.028    
+                         arrival time                           1.294    
+  -------------------------------------------------------------------
+                         slack                                  0.266    
+
+Slack (MET) :             0.268ns  (arrival time - required time)
+  Source:                 Lab5_i/Debounce_0/U0/counter_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            Lab5_i/Debounce_0/U0/counter_reg[16]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_1
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_1 rise@0.000ns - clk_fpga_1 rise@0.000ns)
+  Data Path Delay:        0.373ns  (logic 0.256ns (68.576%)  route 0.117ns (31.424%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.221ns
+    Source Clock Delay      (SCD):    0.925ns
+    Clock Pessimism Removal (CPR):    0.296ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315     0.315    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.341 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.584     0.924    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y30         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y30         FDRE (Prop_fdre_C_Q)         0.141     1.066 r  Lab5_i/Debounce_0/U0/counter_reg[16]/Q
+                         net (fo=4, routed)           0.117     1.183    Lab5_i/Debounce_0/U0/counter_reg[16]
+    SLICE_X41Y30         CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.115     1.298 r  Lab5_i/Debounce_0/U0/counter_reg[16]_i_1/O[0]
+                         net (fo=1, routed)           0.000     1.298    Lab5_i/Debounce_0/U0/counter_reg[16]_i_1_n_7
+    SLICE_X41Y30         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[16]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_1 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    Lab5_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     0.370 r  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=32, routed)          0.851     1.221    Lab5_i/Debounce_0/U0/clk_in
+    SLICE_X41Y30         FDRE                                         r  Lab5_i/Debounce_0/U0/counter_reg[16]/C
+                         clock pessimism             -0.296     0.925    
+    SLICE_X41Y30         FDRE (Hold_fdre_C_D)         0.105     1.030    Lab5_i/Debounce_0/U0/counter_reg[16]
+  -------------------------------------------------------------------
+                         required time                         -1.030    
+                         arrival time                           1.298    
+  -------------------------------------------------------------------
+                         slack                                  0.268    
 
 
 
@@ -1439,35 +1361,35 @@ Sources:            { Lab5_i/processing_system7_0/inst/PS7_i/FCLKCLK[1] }
 
 Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
 Min Period        n/a     BUFG/I   n/a            2.155         10.000      7.845      BUFGCTRL_X0Y1  Lab5_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/I
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X40Y26   Lab5_i/Debounce_0/U0/counter_reg[0]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X40Y28   Lab5_i/Debounce_0/U0/counter_reg[10]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X40Y28   Lab5_i/Debounce_0/U0/counter_reg[11]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X40Y29   Lab5_i/Debounce_0/U0/counter_reg[12]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X40Y29   Lab5_i/Debounce_0/U0/counter_reg[13]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X40Y29   Lab5_i/Debounce_0/U0/counter_reg[14]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X40Y29   Lab5_i/Debounce_0/U0/counter_reg[15]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X40Y30   Lab5_i/Debounce_0/U0/counter_reg[16]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X40Y32   Lab5_i/Debounce_0/U0/counter_reg[24]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y26   Lab5_i/Debounce_0/U0/counter_reg[0]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y32   Lab5_i/Debounce_0/U0/counter_reg[24]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y32   Lab5_i/Debounce_0/U0/counter_reg[25]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y32   Lab5_i/Debounce_0/U0/counter_reg[26]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y32   Lab5_i/Debounce_0/U0/counter_reg[27]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y26   Lab5_i/Debounce_0/U0/counter_reg[2]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y26   Lab5_i/Debounce_0/U0/counter_reg[3]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y27   Lab5_i/Debounce_0/U0/counter_reg[4]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y26   Lab5_i/Debounce_0/U0/counter_reg[1]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y31   Lab5_i/Debounce_0/U0/counter_reg[20]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y28   Lab5_i/Debounce_0/U0/counter_reg[10]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y28   Lab5_i/Debounce_0/U0/counter_reg[11]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y29   Lab5_i/Debounce_0/U0/counter_reg[12]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y29   Lab5_i/Debounce_0/U0/counter_reg[13]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y29   Lab5_i/Debounce_0/U0/counter_reg[14]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y29   Lab5_i/Debounce_0/U0/counter_reg[15]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y30   Lab5_i/Debounce_0/U0/counter_reg[16]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y30   Lab5_i/Debounce_0/U0/counter_reg[16]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y30   Lab5_i/Debounce_0/U0/counter_reg[17]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X40Y30   Lab5_i/Debounce_0/U0/counter_reg[17]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X41Y29   Lab5_i/Debounce_0/U0/counter_reg[13]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X41Y29   Lab5_i/Debounce_0/U0/counter_reg[14]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X41Y29   Lab5_i/Debounce_0/U0/counter_reg[15]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X41Y30   Lab5_i/Debounce_0/U0/counter_reg[16]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X41Y30   Lab5_i/Debounce_0/U0/counter_reg[17]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X41Y30   Lab5_i/Debounce_0/U0/counter_reg[18]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X41Y30   Lab5_i/Debounce_0/U0/counter_reg[19]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X41Y26   Lab5_i/Debounce_0/U0/counter_reg[1]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X41Y31   Lab5_i/Debounce_0/U0/counter_reg[20]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y26   Lab5_i/Debounce_0/U0/counter_reg[1]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y31   Lab5_i/Debounce_0/U0/counter_reg[20]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y31   Lab5_i/Debounce_0/U0/counter_reg[21]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y31   Lab5_i/Debounce_0/U0/counter_reg[22]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y31   Lab5_i/Debounce_0/U0/counter_reg[23]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y32   Lab5_i/Debounce_0/U0/counter_reg[24]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y26   Lab5_i/Debounce_0/U0/counter_reg[3]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y27   Lab5_i/Debounce_0/U0/counter_reg[4]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y27   Lab5_i/Debounce_0/U0/counter_reg[5]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y27   Lab5_i/Debounce_0/U0/counter_reg[6]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y29   Lab5_i/Debounce_0/U0/counter_reg[13]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y29   Lab5_i/Debounce_0/U0/counter_reg[14]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y29   Lab5_i/Debounce_0/U0/counter_reg[15]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y30   Lab5_i/Debounce_0/U0/counter_reg[16]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y30   Lab5_i/Debounce_0/U0/counter_reg[16]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y30   Lab5_i/Debounce_0/U0/counter_reg[17]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y30   Lab5_i/Debounce_0/U0/counter_reg[17]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y30   Lab5_i/Debounce_0/U0/counter_reg[18]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y30   Lab5_i/Debounce_0/U0/counter_reg[18]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X41Y30   Lab5_i/Debounce_0/U0/counter_reg[19]/C
 
 
 

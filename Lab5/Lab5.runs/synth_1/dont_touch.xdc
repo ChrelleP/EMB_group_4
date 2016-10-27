@@ -9,11 +9,11 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Lab5 || ORIG_RE
 # IP: bd/Lab5/ip/Lab5_processing_system7_0_0/Lab5_processing_system7_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Lab5_processing_system7_0_0 || ORIG_REF_NAME==Lab5_processing_system7_0_0}]
 
-# IP: bd/Lab5/ip/Lab5_Debounce_0_0/Lab5_Debounce_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Lab5_Debounce_0_0 || ORIG_REF_NAME==Lab5_Debounce_0_0}]
-
 # IP: bd/Lab5/ip/Lab5_ClockInverter_0_0/Lab5_ClockInverter_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Lab5_ClockInverter_0_0 || ORIG_REF_NAME==Lab5_ClockInverter_0_0}]
+
+# IP: bd/Lab5/ip/Lab5_Debounce_0_0/Lab5_Debounce_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Lab5_Debounce_0_0 || ORIG_REF_NAME==Lab5_Debounce_0_0}]
 
 # XDC: bd/Lab5/ip/Lab5_processing_system7_0_0/Lab5_processing_system7_0_0.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==Lab5_processing_system7_0_0 || ORIG_REF_NAME==Lab5_processing_system7_0_0}] {/inst }]/inst ]]

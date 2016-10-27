@@ -34,10 +34,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity ClockInverter is
     Port ( clk_in : in STD_LOGIC;
            sw_in : in STD_LOGIC;
-           clk_inv_out : out STD_LOGIC);
+           clk_out : out STD_LOGIC);
 end ClockInverter;
 
 architecture Behavioral of ClockInverter is
 begin
-    clk_inv_out <= not (clk_in and sw_in);
+    clk_out <= clk_in and sw_in;
 end Behavioral;

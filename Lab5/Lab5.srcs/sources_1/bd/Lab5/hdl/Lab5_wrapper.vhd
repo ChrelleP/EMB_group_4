@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
---Date        : Wed Oct 26 14:37:35 2016
+--Date        : Thu Oct 27 13:49:35 2016
 --Host        : Error404 running 64-bit Ubuntu 14.04.5 LTS
 --Command     : generate_target Lab5_wrapper.bd
 --Design      : Lab5_wrapper
@@ -35,7 +35,7 @@ entity Lab5_wrapper is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     clk_in : in STD_LOGIC;
-    clk_inv_out : out STD_LOGIC;
+    clk_out : out STD_LOGIC;
     sw_in : in STD_LOGIC
   );
 end Lab5_wrapper;
@@ -64,9 +64,9 @@ architecture STRUCTURE of Lab5_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    clk_inv_out : out STD_LOGIC;
     clk_in : in STD_LOGIC;
-    sw_in : in STD_LOGIC
+    sw_in : in STD_LOGIC;
+    clk_out : out STD_LOGIC
   );
   end component Lab5;
 begin
@@ -94,7 +94,7 @@ Lab5_i: component Lab5
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       clk_in => clk_in,
-      clk_inv_out => clk_inv_out,
+      clk_out => clk_out,
       sw_in => sw_in
     );
 end STRUCTURE;

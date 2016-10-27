@@ -9,4 +9,4 @@ then
 exit $RETVAL
 fi
 }
-ExecStep $xv_path/bin/xsim Debounce_behav -key {Behavioral:sim_1:Functional:Debounce} -tclbatch Debounce.tcl -log simulate.log
+ExecStep $xv_path/bin/xsim ClockInverter_behav -key {Behavioral:sim_1:Functional:ClockInverter} -tclbatch ClockInverter.tcl -log simulate.log

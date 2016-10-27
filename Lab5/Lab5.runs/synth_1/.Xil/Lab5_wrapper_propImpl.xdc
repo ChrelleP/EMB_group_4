@@ -1,9 +1,9 @@
 set_property SRC_FILE_INFO {cfile:/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lab5/Lab5.srcs/sources_1/bd/Lab5/ip/Lab5_processing_system7_0_0/Lab5_processing_system7_0_0.xdc rfile:../../../Lab5.srcs/sources_1/bd/Lab5/ip/Lab5_processing_system7_0_0/Lab5_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:Lab5_i/processing_system7_0/inst} [current_design]
 set_property SRC_FILE_INFO {cfile:/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lab5/Lab5.srcs/constrs_1/new/user_consraints.xdc rfile:../../../Lab5.srcs/constrs_1/new/user_consraints.xdc id:2} [current_design]
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
-set_input_jitter clk_fpga_0 0.6
-set_property src_info {type:SCOPED_XDC file:1 line:24 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_1 0.3
+set_property src_info {type:SCOPED_XDC file:1 line:24 export:INPUT save:INPUT read:READ} [current_design]
+set_input_jitter clk_fpga_0 0.6
 set_property src_info {type:SCOPED_XDC file:1 line:33 export:INPUT save:INPUT read:READ} [current_design]
 set_property iostandard "LVCMOS33" [get_ports "MIO[53]"]
 set_property src_info {type:SCOPED_XDC file:1 line:34 export:INPUT save:INPUT read:READ} [current_design]
@@ -297,6 +297,6 @@ set_property PACKAGE_PIN "C7" [get_ports "PS_CLK"]
 set_property src_info {type:XDC file:2 line:4 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN P15 [get_ports clk_in]
 set_property src_info {type:XDC file:2 line:5 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN M14 [get_ports clk_inv_out]
-set_property src_info {type:XDC file:2 line:6 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN K15 [get_ports sw_in]
+set_property src_info {type:XDC file:2 line:6 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN M14 [get_ports clk_out]

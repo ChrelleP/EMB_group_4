@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Wed Oct 26 14:50:11 2016
+| Date         : Thu Oct 27 13:51:27 2016
 | Host         : Error404 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_drc -file Lab5_wrapper_drc_opted.rpt
 | Design       : Lab5_wrapper
