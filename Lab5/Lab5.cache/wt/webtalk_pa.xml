@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Thu Oct 27 13:52:34 2016">
+<application name="pa" timeStamp="Thu Oct 27 15:34:38 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="093fb978b5f940598af8f21df6dad206" type="ProjectID"/>
 <property name="ProjectIteration" value="26" type="ProjectIteration"/>
@@ -24,19 +24,19 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="CloseProject" value="1" type="JavaHandler"/>
 <property name="CreateBlockDesign" value="1" type="JavaHandler"/>
 <property name="CreateTopHDL" value="1" type="JavaHandler"/>
-<property name="CustomizeRSBBlock" value="2" type="JavaHandler"/>
+<property name="CustomizeRSBBlock" value="3" type="JavaHandler"/>
 <property name="EditDelete" value="4" type="JavaHandler"/>
 <property name="EditProperties" value="3" type="JavaHandler"/>
 <property name="FlipToViewTaskSynthesis" value="1" type="JavaHandler"/>
 <property name="LaunchOpenTarget" value="1" type="JavaHandler"/>
-<property name="LaunchProgramFpga" value="22" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="23" type="JavaHandler"/>
 <property name="NewProject" value="1" type="JavaHandler"/>
-<property name="OpenBlockDesign" value="6" type="JavaHandler"/>
-<property name="OpenHardwareManager" value="14" type="JavaHandler"/>
+<property name="OpenBlockDesign" value="7" type="JavaHandler"/>
+<property name="OpenHardwareManager" value="15" type="JavaHandler"/>
 <property name="OpenProject" value="1" type="JavaHandler"/>
 <property name="OpenRecentTarget" value="5" type="JavaHandler"/>
-<property name="ProgramDevice" value="6" type="JavaHandler"/>
-<property name="ProjectSettingsCmdHandler" value="16" type="JavaHandler"/>
+<property name="ProgramDevice" value="7" type="JavaHandler"/>
+<property name="ProjectSettingsCmdHandler" value="18" type="JavaHandler"/>
 <property name="RecustomizeCore" value="2" type="JavaHandler"/>
 <property name="RefreshDevice" value="2" type="JavaHandler"/>
 <property name="RefreshRSBBlock" value="1" type="JavaHandler"/>
@@ -47,16 +47,73 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="SaveDesign" value="5" type="JavaHandler"/>
 <property name="SaveRSBDesign" value="1" type="JavaHandler"/>
 <property name="ShowView" value="6" type="JavaHandler"/>
-<property name="SimulationRestart" value="7" type="JavaHandler"/>
-<property name="SimulationRun" value="3" type="JavaHandler"/>
-<property name="SimulationRunForTime" value="35" type="JavaHandler"/>
-<property name="ViewLayoutCmd" value="16" type="JavaHandler"/>
+<property name="SimulationRestart" value="8" type="JavaHandler"/>
+<property name="SimulationRun" value="4" type="JavaHandler"/>
+<property name="SimulationRunForTime" value="36" type="JavaHandler"/>
+<property name="ViewLayoutCmd" value="17" type="JavaHandler"/>
 <property name="ViewTaskIPIntegrator" value="1" type="JavaHandler"/>
 <property name="ViewTaskImplementation" value="3" type="JavaHandler"/>
 <property name="ViewTaskProgramandDebug" value="1" type="JavaHandler"/>
 <property name="ViewTaskProjectManager" value="1" type="JavaHandler"/>
-<property name="ViewTaskRTLAnalysis" value="8" type="JavaHandler"/>
+<property name="ViewTaskRTLAnalysis" value="9" type="JavaHandler"/>
 <property name="ViewTaskSynthesis" value="1" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="CANCEL, Cancel" value="1" type="GuiResourceData"/>
+<property name="ClockInverter.vhd, 123, 377" value="1" type="GuiResourceData"/>
+<property name="ClockInverter.vhd, 537, 250" value="1" type="GuiResourceData"/>
+<property name="Component Name, Lab5_ClockInverter_0_0" value="1" type="GuiResourceData"/>
+<property name="Debounce.vhd, 0, 211" value="1" type="GuiResourceData"/>
+<property name="Debounce.vhd, 1, 207" value="1" type="GuiResourceData"/>
+<property name="Debounce.vhd, 1, 210, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="Debounce.vhd, 200, 384" value="1" type="GuiResourceData"/>
+<property name="Debounce.vhd, 3, 157" value="1" type="GuiResourceData"/>
+<property name="Debounce.vhd, 4, 210" value="1" type="GuiResourceData"/>
+<property name="OK, OK" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CmdMsgDialog_OK, OK" value="3" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_RESTART, simulation_live_restart" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN, simulation_live_run_for_time" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, Run Behavioral Simulation" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, VHDL, xil_defaultlib, ClockInverter.vhd], 3, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, VHDL, xil_defaultlib, ClockInverter.vhd], 3, false, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, IP Integrator, Open Block Design], 7, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Program and Debug, Hardware Manager, Program Device], 40, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, RTL Analysis, Elaborated Design], 14, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, RTL Analysis, Elaboration Settings], 13, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Simulation, Run Simulation], 11, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Simulation, Simulation Settings], 10, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_FILE, File" value="4" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProgramFpgaDialog_PROGRAM, Program" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProjectSettingsSimulationPanel_SELECT_TESTBENCH_TOP_MODULE, (String" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SelectTopModuleDialog_SELECT_TOP_MODULE, ClockInverter, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SelectTopModuleDialog_SELECT_TOP_MODULE, ClockInverter, 1, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, FIXED_IO_mio (32" value="20" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, Scalar ports (17" value="5" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, sw_in ; IN ;  ;  ;  ; K15 ; true ; 34 ; LVCMOS33 ; 3.3 ;  ;  ;  ; PULLDOWN ; NONE ; , 18, sw_in, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationForceSettingsDialog_LEADING_EDGE_VALUE, 0" value="2" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationForceSettingsDialog_PERIOD, 200ns" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationForceSettingsDialog_TRAILING_EDGE_VALUE, 1" value="2" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemBuilderMenu_ADD_IP, Add IP..." value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="2" type="GuiResourceData"/>
+<property name="RDIResource.MainWinToolbarMgr_SELECT_OR_SAVE_WINDOW_LAYOUT, I/O Planning, 1" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 101, 78" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 133, 120" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 145, 77" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 159, 65" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 202, 68" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 222, 190" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 231, 162" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 57, 81" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 76, 136" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, [true, clk_in], 0, false" value="3" type="GuiResourceData"/>
+<property name="RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, [true, clk_in], 0, false, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, [true, sw_in], 1, false, false, false, false, true, false" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="32" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="27" type="TclMode"/>
 </item>
 </section>
 </application>
