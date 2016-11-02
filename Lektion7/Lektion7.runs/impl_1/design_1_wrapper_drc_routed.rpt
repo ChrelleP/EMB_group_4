@@ -1,0 +1,40 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Wed Nov  2 17:09:05 2016
+| Host         : Error404 running 64-bit Ubuntu 14.04.5 LTS
+| Command      : report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb
+| Design       : design_1_wrapper
+| Device       : xc7z010clg225-1
+| Speed File   : -1
+-----------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 2
+
+2. REPORT DETAILS
+-----------------
+PDRC-153#1 Warning
+Gated clock check  
+Net design_1_i/rotary_encoder_0/U0/nxt_state_inferred__0_n_0 is a gated clock net sourced by a combinational pin design_1_i/rotary_encoder_0/U0/nxt_state_inferred__0/O, cell design_1_i/rotary_encoder_0/U0/nxt_state_inferred__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PLIO-7#1 Warning
+Placement Constraints Check for IO constraints  
+An IO Bus FIXED_IO_mio[31:0] with more than one IO standard is found. Components associated with this bus are: LVCMOS18 (FIXED_IO_mio[27], FIXED_IO_mio[26], FIXED_IO_mio[25], FIXED_IO_mio[24], FIXED_IO_mio[23], FIXED_IO_mio[22], FIXED_IO_mio[21], FIXED_IO_mio[20], FIXED_IO_mio[19], FIXED_IO_mio[18], FIXED_IO_mio[17], FIXED_IO_mio[16]); LVCMOS33 (FIXED_IO_mio[31], FIXED_IO_mio[30], FIXED_IO_mio[29], FIXED_IO_mio[28], FIXED_IO_mio[15], FIXED_IO_mio[14], FIXED_IO_mio[13], FIXED_IO_mio[12], FIXED_IO_mio[11], FIXED_IO_mio[10], FIXED_IO_mio[9], FIXED_IO_mio[8], FIXED_IO_mio[7], FIXED_IO_mio[6], FIXED_IO_mio[5] (the first 15 of 20 listed)); 
+Related violations: <none>
+
+

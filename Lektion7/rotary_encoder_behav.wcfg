@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="rotary_encoder_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="rotary_encoder" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1243920000fs"></ZoomStartTime>
+      <ZoomEndTime time="1257800001fs"></ZoomEndTime>
+      <Cursor1Time time="1246920000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="7" />
+   <wvobject type="logic" fp_name="/rotary_encoder/in_a">
+      <obj_property name="ElementShortName">in_a</obj_property>
+      <obj_property name="ObjectShortName">in_a</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/rotary_encoder/in_b">
+      <obj_property name="ElementShortName">in_b</obj_property>
+      <obj_property name="ObjectShortName">in_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/rotary_encoder/clk_200M">
+      <obj_property name="ElementShortName">clk_200M</obj_property>
+      <obj_property name="ObjectShortName">clk_200M</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/rotary_encoder/outputz">
+      <obj_property name="ElementShortName">outputz[7:0]</obj_property>
+      <obj_property name="ObjectShortName">outputz[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/rotary_encoder/state">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/rotary_encoder/nxt_state">
+      <obj_property name="ElementShortName">nxt_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">nxt_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/rotary_encoder/AB">
+      <obj_property name="ElementShortName">AB[1:0]</obj_property>
+      <obj_property name="ObjectShortName">AB[1:0]</obj_property>
+   </wvobject>
+</wave_config>
