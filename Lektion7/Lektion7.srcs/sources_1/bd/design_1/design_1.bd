@@ -158,6 +158,12 @@
             <spirit:direction>in</spirit:direction>
           </spirit:wire>
         </spirit:port>
+        <spirit:port>
+          <spirit:name>pwm_out</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
       </spirit:ports>
     </spirit:model>
   </spirit:component>
@@ -254,7 +260,7 @@
           <spirit:configurableElementValue spirit:referenceId="PCW_TTC_PERIPHERAL_FREQMHZ">50</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_PCAP_PERIPHERAL_FREQMHZ">200</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_FPGA0_PERIPHERAL_FREQMHZ">50</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="PCW_FPGA1_PERIPHERAL_FREQMHZ">100</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_FPGA1_PERIPHERAL_FREQMHZ">200</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_FPGA2_PERIPHERAL_FREQMHZ">50</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_FPGA3_PERIPHERAL_FREQMHZ">50</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_ACT_APU_PERIPHERAL_FREQMHZ">666.666687</spirit:configurableElementValue>
@@ -278,7 +284,7 @@
           <spirit:configurableElementValue spirit:referenceId="PCW_ACT_PCAP_PERIPHERAL_FREQMHZ">200.000000</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_ACT_TPIU_PERIPHERAL_FREQMHZ">200.000000</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ">50.000000</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ">100.000000</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ">200.000000</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ">10.000000</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ">10.000000</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_ACT_TTC0_CLK0_PERIPHERAL_FREQMHZ">111.111115</spirit:configurableElementValue>
@@ -288,7 +294,7 @@
           <spirit:configurableElementValue spirit:referenceId="PCW_ACT_TTC1_CLK1_PERIPHERAL_FREQMHZ">111.111115</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_ACT_TTC1_CLK2_PERIPHERAL_FREQMHZ">111.111115</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_CLK0_FREQ">50000000</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="PCW_CLK1_FREQ">100000000</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_CLK1_FREQ">200000000</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_CLK2_FREQ">10000000</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_CLK3_FREQ">10000000</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_OVERRIDE_BASIC_CLOCK">0</spirit:configurableElementValue>
@@ -719,14 +725,6 @@
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="M_AXI_GP0_ACLK"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>processing_system7_0_FCLK_CLK1</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_CLK1"/>
-        <spirit:internalPortReference spirit:componentRef="pwm_generator_0" spirit:portRef="clk_200m_in"/>
-        <spirit:internalPortReference spirit:componentRef="rotary_encoder_0" spirit:portRef="clk_200M"/>
-        <spirit:internalPortReference spirit:componentRef="debounce_0" spirit:portRef="clk_in"/>
-        <spirit:internalPortReference spirit:componentRef="debounce_1" spirit:portRef="clk_in"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>ui_0_reset_out</spirit:name>
         <spirit:internalPortReference spirit:componentRef="ui_0" spirit:portRef="reset_out"/>
         <spirit:internalPortReference spirit:componentRef="pwm_generator_0" spirit:portRef="reset_in"/>
@@ -735,16 +733,26 @@
         <spirit:name>rotary_encoder_0_outputz</spirit:name>
         <spirit:internalPortReference spirit:componentRef="rotary_encoder_0" spirit:portRef="outputz"/>
         <spirit:externalPortReference spirit:portRef="outputz"/>
+        <spirit:internalPortReference spirit:componentRef="pwm_generator_0" spirit:portRef="pwm_duty_in"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>debounce_0_outz</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="debounce_0" spirit:portRef="outz"/>
-        <spirit:internalPortReference spirit:componentRef="rotary_encoder_0" spirit:portRef="in_a"/>
+        <spirit:name>processing_system7_0_FCLK_CLK1</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_CLK1"/>
+        <spirit:internalPortReference spirit:componentRef="pwm_generator_0" spirit:portRef="clk_200m_in"/>
+        <spirit:internalPortReference spirit:componentRef="rotary_encoder_0" spirit:portRef="clk_200M"/>
+        <spirit:internalPortReference spirit:componentRef="debounce_0" spirit:portRef="clk_in"/>
+        <spirit:internalPortReference spirit:componentRef="debounce_1" spirit:portRef="clk_in"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>in_a_1</spirit:name>
         <spirit:externalPortReference spirit:portRef="in_a"/>
         <spirit:internalPortReference spirit:componentRef="debounce_0" spirit:portRef="inputz"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>debounce_0_outz</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="debounce_0" spirit:portRef="outz"/>
+        <spirit:internalPortReference spirit:componentRef="rotary_encoder_0" spirit:portRef="in_a"/>
+        <spirit:externalPortReference spirit:portRef="pwm_out"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>in_b_1</spirit:name>

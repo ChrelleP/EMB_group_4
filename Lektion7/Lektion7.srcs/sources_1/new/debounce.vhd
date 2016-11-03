@@ -38,19 +38,37 @@ entity debounce is
 end debounce;
 
 architecture Behavioral of debounce is
-    signal Q1, Q2, Q3 : std_logic;
 begin
 
 --**Insert the following after the 'begin' keyword**
-process(clk_in)
-begin
-   if rising_edge(clk_in) then
-         Q1 <= inputz;
-         Q2 <= Q1;
-         Q3 <= Q2;
+    process(clk_in)
+        variable counter: integer:=0;
+        variable counter_low : integer :=0;
+    begin
+       if rising_edge(clk_in) then
+          if inputz = '1' then
+                counter:= counter +1;
+          else
+                counter:=0;
+          end if;
+          
+          if counter > 1000 then -- Change if necessary
+            outz <= '1';
+           else
+            outz <= '0';
+          end if;
+
+         if inputz = '0' then
+               counter_low:= counter_low +1;
+         else
+               counter_low:=0;
+         end if;
+         
+         if counter_low > 1000 then -- Change if necessary
+           outz <= '0';
+          else
+           outz <= '1';
+         end if;
       end if;
-end process;
-
-outz <= Q1 and Q2;
-
+    end process;
 end Behavioral;

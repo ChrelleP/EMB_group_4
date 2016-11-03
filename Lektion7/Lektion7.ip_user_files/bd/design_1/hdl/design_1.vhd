@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
---Date        : Wed Nov  2 15:47:16 2016
+--Date        : Thu Nov  3 15:14:18 2016
 --Host        : Error404 running 64-bit Ubuntu 14.04.5 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -36,10 +36,11 @@ entity design_1 is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     in_a : in STD_LOGIC;
     in_b : in STD_LOGIC;
+    outputz : out STD_LOGIC_VECTOR ( 7 downto 0 );
     pwm_out : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=4,numReposBlks=4,numNonXlnxBlks=3,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=6,numNonXlnxBlks=5,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -141,6 +142,22 @@ architecture STRUCTURE of design_1 is
     outputz : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component design_1_rotary_encoder_0_0;
+  component design_1_debounce_0_0 is
+  port (
+    inputz : in STD_LOGIC;
+    outz : out STD_LOGIC;
+    clk_in : in STD_LOGIC
+  );
+  end component design_1_debounce_0_0;
+  component design_1_debounce_0_1 is
+  port (
+    inputz : in STD_LOGIC;
+    outz : out STD_LOGIC;
+    clk_in : in STD_LOGIC
+  );
+  end component design_1_debounce_0_1;
+  signal debounce_0_outz : STD_LOGIC;
+  signal debounce_1_outz : STD_LOGIC;
   signal in_a_1 : STD_LOGIC;
   signal in_b_1 : STD_LOGIC;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
@@ -167,7 +184,7 @@ architecture STRUCTURE of design_1 is
   signal processing_system7_0_FIXED_IO_PS_PORB : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_SRSTB : STD_LOGIC;
   signal pwm_generator_0_pwm_out : STD_LOGIC;
-  signal rotary_encoder_0_output : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal rotary_encoder_0_outputz : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal ui_0_reset_out : STD_LOGIC;
   signal NLW_processing_system7_0_FCLK_RESET0_N_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_ARVALID_UNCONNECTED : STD_LOGIC;
@@ -206,7 +223,20 @@ architecture STRUCTURE of design_1 is
 begin
   in_a_1 <= in_a;
   in_b_1 <= in_b;
+  outputz(7 downto 0) <= rotary_encoder_0_outputz(7 downto 0);
   pwm_out <= pwm_generator_0_pwm_out;
+debounce_0: component design_1_debounce_0_0
+     port map (
+      clk_in => processing_system7_0_FCLK_CLK1,
+      inputz => in_a_1,
+      outz => debounce_0_outz
+    );
+debounce_1: component design_1_debounce_0_1
+     port map (
+      clk_in => processing_system7_0_FCLK_CLK1,
+      inputz => in_b_1,
+      outz => debounce_1_outz
+    );
 processing_system7_0: component design_1_processing_system7_0_0
      port map (
       DDR_Addr(14 downto 0) => DDR_addr(14 downto 0),
@@ -283,16 +313,16 @@ processing_system7_0: component design_1_processing_system7_0_0
 pwm_generator_0: component design_1_pwm_generator_0_0
      port map (
       clk_200m_in => processing_system7_0_FCLK_CLK1,
-      pwm_duty_in(7 downto 0) => rotary_encoder_0_output(7 downto 0),
+      pwm_duty_in(7 downto 0) => rotary_encoder_0_outputz(7 downto 0),
       pwm_out => pwm_generator_0_pwm_out,
       reset_in => ui_0_reset_out
     );
 rotary_encoder_0: component design_1_rotary_encoder_0_0
      port map (
       clk_200M => processing_system7_0_FCLK_CLK1,
-      in_a => in_a_1,
-      in_b => in_b_1,
-      outputz(7 downto 0) => rotary_encoder_0_output(7 downto 0)
+      in_a => debounce_0_outz,
+      in_b => debounce_1_outz,
+      outputz(7 downto 0) => rotary_encoder_0_outputz(7 downto 0)
     );
 ui_0: component design_1_ui_0_0
      port map (

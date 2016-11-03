@@ -17,24 +17,24 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 840 
+INFO: Helper process launched with PID 16090 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1074.883 ; gain = 181.238 ; free physical = 1620 ; free virtual = 13639
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1074.883 ; gain = 181.238 ; free physical = 600 ; free virtual = 12613
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:43]
-INFO: [Synth 8-3491] module 'design_1' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:73]
-INFO: [Synth 8-638] synthesizing module 'design_1' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:47]
-INFO: [Synth 8-3491] module 'design_1_debounce_0_0' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_debounce_0_0/synth/design_1_debounce_0_0.vhd:56' bound to instance 'debounce_0' of component 'design_1_debounce_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:226]
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:44]
+INFO: [Synth 8-3491] module 'design_1' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:75]
+INFO: [Synth 8-638] synthesizing module 'design_1' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:48]
+INFO: [Synth 8-3491] module 'design_1_debounce_0_0' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_debounce_0_0/synth/design_1_debounce_0_0.vhd:56' bound to instance 'debounce_0' of component 'design_1_debounce_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:228]
 INFO: [Synth 8-638] synthesizing module 'design_1_debounce_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_debounce_0_0/synth/design_1_debounce_0_0.vhd:64]
 INFO: [Synth 8-3491] module 'debounce' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/debounce.vhd:34' bound to instance 'U0' of component 'debounce' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_debounce_0_0/synth/design_1_debounce_0_0.vhd:79]
 INFO: [Synth 8-638] synthesizing module 'debounce' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/debounce.vhd:40]
 INFO: [Synth 8-256] done synthesizing module 'debounce' (1#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/debounce.vhd:40]
 INFO: [Synth 8-256] done synthesizing module 'design_1_debounce_0_0' (2#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_debounce_0_0/synth/design_1_debounce_0_0.vhd:64]
-INFO: [Synth 8-3491] module 'design_1_debounce_0_1' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_debounce_0_1/synth/design_1_debounce_0_1.vhd:56' bound to instance 'debounce_1' of component 'design_1_debounce_0_1' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:232]
+INFO: [Synth 8-3491] module 'design_1_debounce_0_1' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_debounce_0_1/synth/design_1_debounce_0_1.vhd:56' bound to instance 'debounce_1' of component 'design_1_debounce_0_1' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:234]
 INFO: [Synth 8-638] synthesizing module 'design_1_debounce_0_1' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_debounce_0_1/synth/design_1_debounce_0_1.vhd:64]
 INFO: [Synth 8-3491] module 'debounce' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/debounce.vhd:34' bound to instance 'U0' of component 'debounce' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_debounce_0_1/synth/design_1_debounce_0_1.vhd:79]
 INFO: [Synth 8-256] done synthesizing module 'design_1_debounce_0_1' (3#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_debounce_0_1/synth/design_1_debounce_0_1.vhd:64]
-INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/synth/design_1_processing_system7_0_0.v:59' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:238]
+INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/synth/design_1_processing_system7_0_0.v:59' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:240]
 INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/synth/design_1_processing_system7_0_0.v:59]
 INFO: [Synth 8-638] synthesizing module 'processing_system7_v5_5_processing_system7' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:156]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
@@ -106,14 +106,14 @@ WARNING: [Synth 8-689] width (2) of port connection 'DDRDQSP' does not match por
 INFO: [Synth 8-256] done synthesizing module 'processing_system7_v5_5_processing_system7' (7#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:156]
 WARNING: [Synth 8-350] instance 'inst' of module 'processing_system7_v5_5_processing_system7' requires 685 connections, but only 672 given [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/synth/design_1_processing_system7_0_0.v:324]
 INFO: [Synth 8-256] done synthesizing module 'design_1_processing_system7_0_0' (8#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/synth/design_1_processing_system7_0_0.v:59]
-INFO: [Synth 8-3491] module 'design_1_pwm_generator_0_0' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_pwm_generator_0_0/synth/design_1_pwm_generator_0_0.vhd:56' bound to instance 'pwm_generator_0' of component 'design_1_pwm_generator_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:311]
+INFO: [Synth 8-3491] module 'design_1_pwm_generator_0_0' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_pwm_generator_0_0/synth/design_1_pwm_generator_0_0.vhd:56' bound to instance 'pwm_generator_0' of component 'design_1_pwm_generator_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:313]
 INFO: [Synth 8-638] synthesizing module 'design_1_pwm_generator_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_pwm_generator_0_0/synth/design_1_pwm_generator_0_0.vhd:65]
 INFO: [Synth 8-3491] module 'pwm_generator' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/pwm_generator.vhd:35' bound to instance 'U0' of component 'pwm_generator' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_pwm_generator_0_0/synth/design_1_pwm_generator_0_0.vhd:83]
 INFO: [Synth 8-638] synthesizing module 'pwm_generator' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/pwm_generator.vhd:42]
 WARNING: [Synth 8-614] signal 'reset_in' is read in the process but is not in the sensitivity list [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/pwm_generator.vhd:46]
 INFO: [Synth 8-256] done synthesizing module 'pwm_generator' (9#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/pwm_generator.vhd:42]
 INFO: [Synth 8-256] done synthesizing module 'design_1_pwm_generator_0_0' (10#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_pwm_generator_0_0/synth/design_1_pwm_generator_0_0.vhd:65]
-INFO: [Synth 8-3491] module 'design_1_rotary_encoder_0_0' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_rotary_encoder_0_0/synth/design_1_rotary_encoder_0_0.vhd:56' bound to instance 'rotary_encoder_0' of component 'design_1_rotary_encoder_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:318]
+INFO: [Synth 8-3491] module 'design_1_rotary_encoder_0_0' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_rotary_encoder_0_0/synth/design_1_rotary_encoder_0_0.vhd:56' bound to instance 'rotary_encoder_0' of component 'design_1_rotary_encoder_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:320]
 INFO: [Synth 8-638] synthesizing module 'design_1_rotary_encoder_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_rotary_encoder_0_0/synth/design_1_rotary_encoder_0_0.vhd:65]
 INFO: [Synth 8-3491] module 'rotary_encoder' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/rotary_encoder.vhd:34' bound to instance 'U0' of component 'rotary_encoder' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_rotary_encoder_0_0/synth/design_1_rotary_encoder_0_0.vhd:81]
 INFO: [Synth 8-638] synthesizing module 'rotary_encoder' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/rotary_encoder.vhd:41]
@@ -122,14 +122,14 @@ WARNING: [Synth 8-614] signal 'in_a' is read in the process but is not in the se
 WARNING: [Synth 8-614] signal 'in_b' is read in the process but is not in the sensitivity list [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/rotary_encoder.vhd:44]
 INFO: [Synth 8-256] done synthesizing module 'rotary_encoder' (11#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/rotary_encoder.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'design_1_rotary_encoder_0_0' (12#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_rotary_encoder_0_0/synth/design_1_rotary_encoder_0_0.vhd:65]
-INFO: [Synth 8-3491] module 'design_1_ui_0_0' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_ui_0_0/synth/design_1_ui_0_0.vhd:56' bound to instance 'ui_0' of component 'design_1_ui_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:325]
+INFO: [Synth 8-3491] module 'design_1_ui_0_0' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_ui_0_0/synth/design_1_ui_0_0.vhd:56' bound to instance 'ui_0' of component 'design_1_ui_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:327]
 INFO: [Synth 8-638] synthesizing module 'design_1_ui_0_0' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_ui_0_0/synth/design_1_ui_0_0.vhd:63]
 INFO: [Synth 8-3491] module 'ui' declared at '/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/ui.vhd:34' bound to instance 'U0' of component 'ui' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_ui_0_0/synth/design_1_ui_0_0.vhd:79]
 INFO: [Synth 8-638] synthesizing module 'ui' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/ui.vhd:39]
 INFO: [Synth 8-256] done synthesizing module 'ui' (13#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/ui.vhd:39]
 INFO: [Synth 8-256] done synthesizing module 'design_1_ui_0_0' (14#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_ui_0_0/synth/design_1_ui_0_0.vhd:63]
-INFO: [Synth 8-256] done synthesizing module 'design_1' (15#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:47]
-INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (16#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (15#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1.vhd:48]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (16#1) [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:44]
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_COL
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_CRS
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RX_DV
@@ -210,7 +210,7 @@ WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has un
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_ATID[1]
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_ATID[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1116.328 ; gain = 222.684 ; free physical = 1576 ; free virtual = 13596
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1116.328 ; gain = 222.684 ; free physical = 556 ; free virtual = 12569
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -220,7 +220,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1116.328 ; gain = 222.684 ; free physical = 1576 ; free virtual = 13596
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1116.328 ; gain = 222.684 ; free physical = 556 ; free virtual = 12569
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg225-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -448,12 +448,6 @@ Finished Parsing XDC File [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_grou
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/constrs_1/new/constrain.xdc]
-WARNING: [Vivado 12-584] No ports matched 'pwm_out'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/constrs_1/new/constrain.xdc:1]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/constrs_1/new/constrain.xdc:1]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'pwm_out'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/constrs_1/new/constrain.xdc:2]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/constrs_1/new/constrain.xdc:2]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/constrs_1/new/constrain.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/constrs_1/new/constrain.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
@@ -466,16 +460,16 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1399.980 ; gain = 0.000 ; free physical = 1408 ; free virtual = 13429
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1400.973 ; gain = 0.000 ; free physical = 388 ; free virtual = 12401
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1399.980 ; gain = 506.336 ; free physical = 1408 ; free virtual = 13428
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1400.973 ; gain = 507.328 ; free physical = 386 ; free virtual = 12400
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg225-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1399.980 ; gain = 506.336 ; free physical = 1408 ; free virtual = 13428
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1400.973 ; gain = 507.328 ; free physical = 386 ; free virtual = 12400
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -489,11 +483,11 @@ Applied set_property DONT_TOUCH = true for design_1_i/pwm_generator_0. (constrai
 Applied set_property DONT_TOUCH = true for design_1_i/rotary_encoder_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/ui_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1399.980 ; gain = 506.336 ; free physical = 1408 ; free virtual = 13428
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1400.973 ; gain = 507.328 ; free physical = 386 ; free virtual = 12400
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-327] inferring latch for variable 'nxt_state_reg' [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/new/rotary_encoder.vhd:49]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1399.980 ; gain = 506.336 ; free physical = 1401 ; free virtual = 13421
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1400.973 ; gain = 507.328 ; free physical = 379 ; free virtual = 12393
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -506,13 +500,13 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 4     
 	   5 Input     32 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 2     
+	               32 Bit    Registers := 4     
 	                8 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 4     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 6     
 	   6 Input      2 Bit        Muxes := 1     
@@ -528,8 +522,11 @@ Start RTL Hierarchical Component Statistics
 Hierarchical RTL Component report 
 Module debounce 
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
 +---Registers : 
-	                1 Bit    Registers := 2     
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 Module pwm_generator 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -566,7 +563,7 @@ BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1399.980 ; gain = 506.336 ; free physical = 1401 ; free virtual = 13421
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1400.973 ; gain = 507.328 ; free physical = 379 ; free virtual = 12392
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -593,9 +590,9 @@ WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has un
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RXD[3]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1399.980 ; gain = 506.336 ; free physical = 1393 ; free virtual = 13413
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1400.973 ; gain = 507.328 ; free physical = 371 ; free virtual = 12384
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1399.980 ; gain = 506.336 ; free physical = 1393 ; free virtual = 13413
+Finished Parallel Reinference  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1400.973 ; gain = 507.328 ; free physical = 371 ; free virtual = 12384
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -606,9 +603,9 @@ Report RTL Partitions:
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1399.980 ; gain = 506.336 ; free physical = 1379 ; free virtual = 13399
+Finished Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1400.973 ; gain = 507.328 ; free physical = 356 ; free virtual = 12370
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1399.980 ; gain = 506.336 ; free physical = 1379 ; free virtual = 13399
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1400.973 ; gain = 507.328 ; free physical = 356 ; free virtual = 12370
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -622,10 +619,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 1570.980 ; gain = 677.336 ; free physical = 1189 ; free virtual = 13209
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1573.973 ; gain = 680.328 ; free physical = 165 ; free virtual = 12179
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 1597.996 ; gain = 704.352 ; free physical = 1161 ; free virtual = 13182
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1600.988 ; gain = 707.344 ; free physical = 138 ; free virtual = 12151
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -637,16 +634,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:00:47 . Memory (MB): peak = 1606.004 ; gain = 712.359 ; free physical = 1153 ; free virtual = 13174
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 1608.996 ; gain = 715.352 ; free physical = 129 ; free virtual = 12143
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:47 ; elapsed = 00:00:47 . Memory (MB): peak = 1606.004 ; gain = 712.359 ; free physical = 1153 ; free virtual = 13174
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 1608.996 ; gain = 715.352 ; free physical = 129 ; free virtual = 12143
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:47 ; elapsed = 00:00:47 . Memory (MB): peak = 1606.004 ; gain = 712.359 ; free physical = 1153 ; free virtual = 13174
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 1608.996 ; gain = 715.352 ; free physical = 129 ; free virtual = 12143
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -659,12 +656,11 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5365] Flop U0/counter_reg[31] is being inverted and renamed to U0/counter_reg[31]_inv.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 1606.004 ; gain = 712.359 ; free physical = 1153 ; free virtual = 13174
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1608.996 ; gain = 715.352 ; free physical = 130 ; free virtual = 12143
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -677,7 +673,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 1606.004 ; gain = 712.359 ; free physical = 1153 ; free virtual = 13174
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1608.996 ; gain = 715.352 ; free physical = 130 ; free virtual = 12143
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -689,25 +685,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 1606.004 ; gain = 712.359 ; free physical = 1153 ; free virtual = 13174
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1608.996 ; gain = 715.352 ; free physical = 130 ; free virtual = 12143
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 1606.004 ; gain = 712.359 ; free physical = 1153 ; free virtual = 13174
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1608.996 ; gain = 715.352 ; free physical = 130 ; free virtual = 12143
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 1606.004 ; gain = 712.359 ; free physical = 1153 ; free virtual = 13174
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1608.996 ; gain = 715.352 ; free physical = 130 ; free virtual = 12143
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 1606.004 ; gain = 712.359 ; free physical = 1153 ; free virtual = 13174
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1608.996 ; gain = 715.352 ; free physical = 130 ; free virtual = 12143
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -725,48 +721,47 @@ Report Cell Usage:
 +------+-------+------+
 |1     |BIBUF  |    86|
 |2     |BUFG   |     2|
-|3     |CARRY4 |    52|
-|4     |LUT1   |   203|
-|5     |LUT2   |   109|
-|6     |LUT3   |    51|
-|7     |LUT4   |    35|
-|8     |LUT5   |     2|
+|3     |CARRY4 |    76|
+|4     |LUT1   |   270|
+|5     |LUT2   |   107|
+|6     |LUT3   |   111|
+|7     |LUT4   |    36|
+|8     |LUT5   |     1|
 |9     |LUT6   |    33|
 |10    |PS7    |     1|
 |11    |FDCE   |    32|
-|12    |FDRE   |    47|
-|13    |FDSE   |     1|
-|14    |LD     |     2|
-|15    |IBUF   |     2|
-|16    |OBUF   |     8|
+|12    |FDRE   |   110|
+|13    |LD     |     2|
+|14    |IBUF   |     2|
+|15    |OBUF   |     9|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+-------------------------+-------------------------------------------+------+
 |      |Instance                 |Module                                     |Cells |
 +------+-------------------------+-------------------------------------------+------+
-|1     |top                      |                                           |   666|
-|2     |  design_1_i             |design_1                                   |   656|
-|3     |    debounce_0           |design_1_debounce_0_0                      |     3|
-|4     |      U0                 |debounce_0                                 |     3|
-|5     |    debounce_1           |design_1_debounce_0_1                      |     3|
-|6     |      U0                 |debounce                                   |     3|
+|1     |top                      |                                           |   878|
+|2     |  design_1_i             |design_1                                   |   867|
+|3     |    debounce_0           |design_1_debounce_0_0                      |   108|
+|4     |      U0                 |debounce_0                                 |   108|
+|5     |    debounce_1           |design_1_debounce_0_1                      |   108|
+|6     |      U0                 |debounce                                   |   108|
 |7     |    processing_system7_0 |design_1_processing_system7_0_0            |   201|
 |8     |      inst               |processing_system7_v5_5_processing_system7 |   201|
 |9     |    pwm_generator_0      |design_1_pwm_generator_0_0                 |   235|
 |10    |      U0                 |pwm_generator                              |   235|
-|11    |    rotary_encoder_0     |design_1_rotary_encoder_0_0                |   214|
-|12    |      U0                 |rotary_encoder                             |   214|
+|11    |    rotary_encoder_0     |design_1_rotary_encoder_0_0                |   215|
+|12    |      U0                 |rotary_encoder                             |   215|
 |13    |    ui_0                 |design_1_ui_0_0                            |     0|
 +------+-------------------------+-------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 1606.004 ; gain = 712.359 ; free physical = 1153 ; free virtual = 13174
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1608.996 ; gain = 715.352 ; free physical = 130 ; free virtual = 12143
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 80 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1606.004 ; gain = 309.465 ; free physical = 1153 ; free virtual = 13174
-Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 1606.012 ; gain = 712.367 ; free physical = 1155 ; free virtual = 13176
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1608.996 ; gain = 311.465 ; free physical = 130 ; free virtual = 12143
+Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1609.004 ; gain = 715.359 ; free physical = 131 ; free virtual = 12145
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 56 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 80 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -775,8 +770,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LD => LDCE: 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-66 Infos, 183 Warnings, 74 Critical Warnings and 0 Errors encountered.
+65 Infos, 181 Warnings, 72 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:46 . Memory (MB): peak = 1638.020 ; gain = 637.715 ; free physical = 1156 ; free virtual = 13176
-report_utilization: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.27 . Memory (MB): peak = 1670.039 ; gain = 0.000 ; free physical = 1156 ; free virtual = 13176
-INFO: [Common 17-206] Exiting Vivado at Wed Nov  2 17:08:08 2016...
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 1641.012 ; gain = 640.707 ; free physical = 132 ; free virtual = 12145
+report_utilization: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.27 . Memory (MB): peak = 1673.031 ; gain = 0.000 ; free physical = 160 ; free virtual = 12148
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  3 17:04:47 2016...

@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
---Date        : Wed Nov  2 17:07:06 2016
+--Date        : Thu Nov  3 17:03:53 2016
 --Host        : Error404 running 64-bit Ubuntu 14.04.5 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -36,7 +36,8 @@ entity design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     in_a : in STD_LOGIC;
     in_b : in STD_LOGIC;
-    outputz : out STD_LOGIC_VECTOR ( 7 downto 0 )
+    outputz : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    pwm_out : out STD_LOGIC
   );
 end design_1_wrapper;
 
@@ -66,7 +67,8 @@ architecture STRUCTURE of design_1_wrapper is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     outputz : out STD_LOGIC_VECTOR ( 7 downto 0 );
     in_a : in STD_LOGIC;
-    in_b : in STD_LOGIC
+    in_b : in STD_LOGIC;
+    pwm_out : out STD_LOGIC
   );
   end component design_1;
 begin
@@ -95,6 +97,7 @@ design_1_i: component design_1
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       in_a => in_a,
       in_b => in_b,
-      outputz(7 downto 0) => outputz(7 downto 0)
+      outputz(7 downto 0) => outputz(7 downto 0),
+      pwm_out => pwm_out
     );
 end STRUCTURE;

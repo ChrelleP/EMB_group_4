@@ -168,6 +168,7 @@ proc create_root_design { parentCell } {
   set in_a [ create_bd_port -dir I in_a ]
   set in_b [ create_bd_port -dir I in_b ]
   set outputz [ create_bd_port -dir O -from 7 -to 0 outputz ]
+  set pwm_out [ create_bd_port -dir O pwm_out ]
 
   # Create instance: debounce_0, and set properties
   set block_name debounce
@@ -202,7 +203,7 @@ CONFIG.PCW_ACT_DCI_PERIPHERAL_FREQMHZ {10.158730} \
 CONFIG.PCW_ACT_ENET0_PERIPHERAL_FREQMHZ {125.000000} \
 CONFIG.PCW_ACT_ENET1_PERIPHERAL_FREQMHZ {10.000000} \
 CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {50.000000} \
-CONFIG.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ {100.000000} \
+CONFIG.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ {200.000000} \
 CONFIG.PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ {10.000000} \
 CONFIG.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ {10.000000} \
 CONFIG.PCW_ACT_I2C_PERIPHERAL_FREQMHZ {50} \
@@ -248,7 +249,7 @@ CONFIG.PCW_CAN_PERIPHERAL_DIVISOR1 {1} \
 CONFIG.PCW_CAN_PERIPHERAL_FREQMHZ {100} \
 CONFIG.PCW_CAN_PERIPHERAL_VALID {0} \
 CONFIG.PCW_CLK0_FREQ {50000000} \
-CONFIG.PCW_CLK1_FREQ {100000000} \
+CONFIG.PCW_CLK1_FREQ {200000000} \
 CONFIG.PCW_CLK2_FREQ {10000000} \
 CONFIG.PCW_CLK3_FREQ {10000000} \
 CONFIG.PCW_CORE0_FIQ_INTR {0} \
@@ -386,7 +387,7 @@ CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {8} \
 CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {4} \
 CONFIG.PCW_FCLK1_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {4} \
-CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {4} \
+CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {2} \
 CONFIG.PCW_FCLK2_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR0 {1} \
 CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR1 {1} \
@@ -398,7 +399,7 @@ CONFIG.PCW_FCLK_CLK1_BUF {true} \
 CONFIG.PCW_FCLK_CLK2_BUF {false} \
 CONFIG.PCW_FCLK_CLK3_BUF {false} \
 CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {50} \
-CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {100} \
+CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {200} \
 CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {50} \
 CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {50} \
 CONFIG.PCW_FPGA_FCLK0_ENABLE {1} \
@@ -1247,13 +1248,13 @@ CONFIG.PCW_WDT_WDT_IO.VALUE_SRC {DEFAULT} \
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
 
   # Create port connections
-  connect_bd_net -net debounce_0_outz [get_bd_pins debounce_0/outz] [get_bd_pins rotary_encoder_0/in_a]
+  connect_bd_net -net debounce_0_outz [get_bd_ports pwm_out] [get_bd_pins debounce_0/outz] [get_bd_pins rotary_encoder_0/in_a]
   connect_bd_net -net debounce_1_outz [get_bd_pins debounce_1/outz] [get_bd_pins rotary_encoder_0/in_b]
   connect_bd_net -net in_a_1 [get_bd_ports in_a] [get_bd_pins debounce_0/inputz]
   connect_bd_net -net in_b_1 [get_bd_ports in_b] [get_bd_pins debounce_1/inputz]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK]
   connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_pins debounce_0/clk_in] [get_bd_pins debounce_1/clk_in] [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins pwm_generator_0/clk_200m_in] [get_bd_pins rotary_encoder_0/clk_200M]
-  connect_bd_net -net rotary_encoder_0_outputz [get_bd_ports outputz] [get_bd_pins rotary_encoder_0/outputz]
+  connect_bd_net -net rotary_encoder_0_outputz [get_bd_ports outputz] [get_bd_pins pwm_generator_0/pwm_duty_in] [get_bd_pins rotary_encoder_0/outputz]
   connect_bd_net -net ui_0_reset_out [get_bd_pins pwm_generator_0/reset_in] [get_bd_pins ui_0/reset_out]
 
   # Create address segments
@@ -1266,24 +1267,25 @@ preplace port DDR -pg 1 -y 10 -defaultsOSRD
 preplace port in_a -pg 1 -y -30 -defaultsOSRD
 preplace port in_b -pg 1 -y -10 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 30 -defaultsOSRD
+preplace port pwm_out -pg 1 -lvl 2:-90 -defaultsOSRD -bot
 preplace portBus outputz -pg 1 -y -10 -defaultsOSRD
-preplace inst ui_0 -pg 1 -lvl 2 -y 310 -defaultsOSRD
+preplace inst ui_0 -pg 1 -lvl 2 -y 320 -defaultsOSRD
 preplace inst rotary_encoder_0 -pg 1 -lvl 2 -y -10 -defaultsOSRD
-preplace inst debounce_0 -pg 1 -lvl 1 -y -110 -defaultsOSRD
-preplace inst debounce_1 -pg 1 -lvl 1 -y 80 -defaultsOSRD
+preplace inst debounce_0 -pg 1 -lvl 1 -y -50 -defaultsOSRD
+preplace inst debounce_1 -pg 1 -lvl 1 -y 60 -defaultsOSRD
 preplace inst pwm_generator_0 -pg 1 -lvl 3 -y 310 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 3 -y 90 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 3 1 NJ
 preplace netloc in_a_1 1 0 1 -250
 preplace netloc debounce_1_outz 1 1 1 -50
-preplace netloc ui_0_reset_out 1 2 1 190
+preplace netloc ui_0_reset_out 1 2 1 N
 preplace netloc processing_system7_0_FIXED_IO 1 3 1 NJ
 preplace netloc in_b_1 1 0 1 -250
-preplace netloc rotary_encoder_0_outputz 1 2 2 NJ -70 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 2 2 200 -50 600
-preplace netloc processing_system7_0_FCLK_CLK1 1 0 4 -240 10 -60 60 190 230 600
-preplace netloc debounce_0_outz 1 1 1 -50
-levelinfo -pg 1 -270 -150 70 400 630 -top -200 -bot 480
+preplace netloc rotary_encoder_0_outputz 1 2 2 NJ -50 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 2 2 220 230 630
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 4 -240 -110 -40 60 200 240 620
+preplace netloc debounce_0_outz 1 1 1 -60
+levelinfo -pg 1 -270 -150 80 420 660 -top -230 -bot 500
 ",
 }
 

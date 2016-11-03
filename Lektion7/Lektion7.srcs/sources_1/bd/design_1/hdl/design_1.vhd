@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
---Date        : Wed Nov  2 17:07:05 2016
+--Date        : Thu Nov  3 17:03:53 2016
 --Host        : Error404 running 64-bit Ubuntu 14.04.5 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -36,7 +36,8 @@ entity design_1 is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     in_a : in STD_LOGIC;
     in_b : in STD_LOGIC;
-    outputz : out STD_LOGIC_VECTOR ( 7 downto 0 )
+    outputz : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    pwm_out : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
   attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=6,numNonXlnxBlks=5,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=Global}";
@@ -223,6 +224,7 @@ begin
   in_a_1 <= in_a;
   in_b_1 <= in_b;
   outputz(7 downto 0) <= rotary_encoder_0_outputz(7 downto 0);
+  pwm_out <= debounce_0_outz;
 debounce_0: component design_1_debounce_0_0
      port map (
       clk_in => processing_system7_0_FCLK_CLK1,
@@ -311,7 +313,7 @@ processing_system7_0: component design_1_processing_system7_0_0
 pwm_generator_0: component design_1_pwm_generator_0_0
      port map (
       clk_200m_in => processing_system7_0_FCLK_CLK1,
-      pwm_duty_in(7 downto 0) => B"00000000",
+      pwm_duty_in(7 downto 0) => rotary_encoder_0_outputz(7 downto 0),
       pwm_out => NLW_pwm_generator_0_pwm_out_UNCONNECTED,
       reset_in => ui_0_reset_out
     );

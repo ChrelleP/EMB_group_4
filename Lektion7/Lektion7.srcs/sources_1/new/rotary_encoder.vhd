@@ -78,21 +78,43 @@ begin
         variable counter :integer := 0;
     begin
         if rising_edge(clk_200M) then
+         -- A
             if pr_state = "11" and nxt_state = "01" then
-                counter := counter +1;
+                counter := counter -1;
             end if;
             
             if pr_state = "00" and nxt_state = "10" then
-                counter := counter +1;
+                counter := counter -1;
             end if;
             
             if pr_state = "01" and nxt_state = "11" then
-                counter := counter -1;
+                counter := counter +1;
             end if;
             
             if pr_state = "10" and nxt_state = "00" then
-                counter := counter -1;
+                counter := counter +1;
             end if;
+ 
+ 
+            -- B
+            --if pr_state = "11" and nxt_state = "10" then
+            --    counter := counter +1;
+            --end if;
+            
+            --if pr_state = "00" and nxt_state = "01" then
+            --    counter := counter +1;
+            --end if;
+            
+            --if pr_state = "10" and nxt_state = "11" then
+            --    counter := counter -1;
+            --end if;
+            
+            --if pr_state = "01" and nxt_state = "00" then
+            --    counter := counter -1;
+            --end if;
+            
+            
+            
             if counter > 254 then
                 counter := 255;
             end if;
@@ -102,12 +124,14 @@ begin
             end if;
             outputz<= std_logic_vector(to_unsigned(counter, outputz'length));    
         end if;
-    end process;
 
-    state_register: process(clk_200M) 
+    end process;
+    
+    
+    output_state: process(clk_200M)
     begin
         if rising_edge(clk_200M) then
-            pr_state <= nxt_state;
-        end if;
+                pr_state <= nxt_state;
+         end if;
     end process;
 end Behavioral;

@@ -38,6 +38,6 @@ end ui;
 
 architecture Behavioral of ui is
 begin
-    duty_out <= x"01";
+    duty_out <= x"80";
     reset_out<='0';
 end Behavioral;
