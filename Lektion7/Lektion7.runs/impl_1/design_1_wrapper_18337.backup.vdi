@@ -1,0 +1,868 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Thu Nov  3 15:04:53 2016
+# Process ID: 18337
+# Current directory: /home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.runs/impl_1
+# Command line: vivado -log design_1_wrapper.vdi -applog -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
+# Log file: /home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.runs/impl_1/design_1_wrapper.vdi
+# Journal file: /home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 78 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Device 21-403] Loading part xc7z010clg225-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc] for cell 'design_1_i/processing_system7_0/inst'
+WARNING: [Vivado 12-584] No ports matched 'MIO[53]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[53]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[53]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[53]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[53]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[53]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[52]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[52]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[52]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[52]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[52]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[52]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[49]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[49]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[49]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[49]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[49]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[49]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[48]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[48]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[48]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[48]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[48]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[48]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[39]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[39]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[39]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[39]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[39]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[39]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[38]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[38]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[38]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[38]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[38]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[38]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:73]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[37]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[37]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[37]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:77]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:77]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[37]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:78]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:78]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[37]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:79]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:79]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[37]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:80]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:80]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[36]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:82]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:82]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[36]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:83]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:83]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[36]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:84]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:84]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[36]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:85]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[36]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:86]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:86]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[36]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[35]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[35]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[35]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:91]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:91]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[35]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:92]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[35]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:93]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[35]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[34]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:96]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:96]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[34]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:97]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:97]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[34]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:98]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:98]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[34]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:99]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:99]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[34]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:100]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:100]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[34]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:101]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:101]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[33]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:103]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:103]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[33]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:104]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:104]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[33]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:105]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:105]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[33]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:106]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:106]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[33]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:107]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:107]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[33]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:108]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:108]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[32]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:110]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:110]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[32]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:111]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:111]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[32]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:112]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:112]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[32]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:113]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:113]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[32]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:114]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:114]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'MIO[32]'. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:115]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:115]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not legally place instance design_1_i/processing_system7_0/inst/genblk13[31].MIO_BIBUF at C12 (IOPAD_X1Y108) since it belongs to a shape containing instance design_1_i/processing_system7_0/inst/PS7_i. The shape requires relative placement between design_1_i/processing_system7_0/inst/genblk13[31].MIO_BIBUF and design_1_i/processing_system7_0/inst/PS7_i that can not be honoured because it would result in an invalid location for design_1_i/processing_system7_0/inst/PS7_i. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:118]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not legally place instance design_1_i/processing_system7_0/inst/genblk13[30].MIO_BIBUF at B15 (IOPAD_X1Y107) since it belongs to a shape containing instance design_1_i/processing_system7_0/inst/PS7_i. The shape requires relative placement between design_1_i/processing_system7_0/inst/genblk13[30].MIO_BIBUF and design_1_i/processing_system7_0/inst/PS7_i that can not be honoured because it would result in an invalid location for design_1_i/processing_system7_0/inst/PS7_i. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:125]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not legally place instance design_1_i/processing_system7_0/inst/genblk13[29].MIO_BIBUF at D11 (IOPAD_X1Y106) since it belongs to a shape containing instance design_1_i/processing_system7_0/inst/PS7_i. The shape requires relative placement between design_1_i/processing_system7_0/inst/genblk13[29].MIO_BIBUF and design_1_i/processing_system7_0/inst/PS7_i that can not be honoured because it would result in an invalid location for design_1_i/processing_system7_0/inst/PS7_i. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:132]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not legally place instance design_1_i/processing_system7_0/inst/genblk13[28].MIO_BIBUF at A15 (IOPAD_X1Y105) since it belongs to a shape containing instance design_1_i/processing_system7_0/inst/PS7_i. The shape requires relative placement between design_1_i/processing_system7_0/inst/genblk13[28].MIO_BIBUF and design_1_i/processing_system7_0/inst/PS7_i that can not be honoured because it would result in an invalid location for design_1_i/processing_system7_0/inst/PS7_i. [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc:139]
+Finished Parsing XDC File [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc] for cell 'design_1_i/processing_system7_0/inst'
+Parsing XDC File [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/constrs_1/new/constrain.xdc]
+Finished Parsing XDC File [/home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.srcs/constrs_1/new/constrain.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+link_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1286.980 ; gain = 314.773 ; free physical = 759 ; free virtual = 12686
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1353.012 ; gain = 66.023 ; free physical = 755 ; free virtual = 12683
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+Implement Debug Cores | Checksum: 18a2f80fb
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 152a086cc
+
+Time (s): cpu = 00:00:00.38 ; elapsed = 00:00:00.38 . Memory (MB): peak = 1738.504 ; gain = 0.000 ; free physical = 454 ; free virtual = 12383
+
+Phase 2 Constant Propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-10] Eliminated 0 cells.
+Phase 2 Constant Propagation | Checksum: 152a086cc
+
+Time (s): cpu = 00:00:00.48 ; elapsed = 00:00:00.48 . Memory (MB): peak = 1738.504 ; gain = 0.000 ; free physical = 454 ; free virtual = 12383
+
+Phase 3 Sweep
+INFO: [Opt 31-12] Eliminated 241 unconnected nets.
+INFO: [Opt 31-11] Eliminated 89 unconnected cells.
+Phase 3 Sweep | Checksum: 209d5d432
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1738.504 ; gain = 0.000 ; free physical = 454 ; free virtual = 12382
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1738.504 ; gain = 0.000 ; free physical = 454 ; free virtual = 12382
+Ending Logic Optimization Task | Checksum: 209d5d432
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1738.504 ; gain = 0.000 ; free physical = 454 ; free virtual = 12382
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 209d5d432
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1738.504 ; gain = 0.000 ; free physical = 454 ; free virtual = 12382
+INFO: [Common 17-83] Releasing license: Implementation
+20 Infos, 72 Warnings, 76 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1738.504 ; gain = 451.516 ; free physical = 454 ; free virtual = 12382
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.11 . Memory (MB): peak = 1770.520 ; gain = 0.000 ; free physical = 449 ; free virtual = 12379
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.runs/impl_1/design_1_wrapper_drc_opted.rpt.
+INFO: [Chipscope 16-241] No debug cores found in the current design.
+Before running the implement_debug_core command, either use the Set Up Debug wizard (GUI mode)
+or use the create_debug_core and connect_debug_core Tcl commands to insert debug cores into the design.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.535 ; gain = 0.000 ; free physical = 448 ; free virtual = 12376
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.535 ; gain = 0.000 ; free physical = 448 ; free virtual = 12376
+
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
+
+Phase 1.1.1 ParallelPlaceIOClockAndInitTop
+
+Phase 1.1.1.1 Pre-Place Cells
+Phase 1.1.1.1 Pre-Place Cells | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1802.535 ; gain = 0.000 ; free physical = 448 ; free virtual = 12376
+
+Phase 1.1.1.2 Constructing HAPIClkRuleMgr
+Phase 1.1.1.2 Constructing HAPIClkRuleMgr | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:00.65 ; elapsed = 00:00:00.84 . Memory (MB): peak = 1802.535 ; gain = 0.000 ; free physical = 447 ; free virtual = 12375
+
+Phase 1.1.1.3 IOLockPlacementChecker
+
+Phase 1.1.1.4 IOBufferPlacementChecker
+
+Phase 1.1.1.5 ClockRegionPlacementChecker
+
+Phase 1.1.1.6 DSPChecker
+Phase 1.1.1.4 IOBufferPlacementChecker | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+
+Phase 1.1.1.7 DisallowedInsts
+Phase 1.1.1.6 DSPChecker | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+
+Phase 1.1.1.8 V7IOVoltageChecker
+Phase 1.1.1.5 ClockRegionPlacementChecker | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+
+Phase 1.1.1.9 CheckerForUnsupportedConstraints
+Phase 1.1.1.7 DisallowedInsts | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+
+Phase 1.1.1.10 Laguna PBlock Checker
+Phase 1.1.1.3 IOLockPlacementChecker | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+
+Phase 1.1.1.11 CheckerForMandatoryPrePlacedCells
+Phase 1.1.1.8 V7IOVoltageChecker | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+
+Phase 1.1.1.12 OverlappingPBlocksChecker
+Phase 1.1.1.9 CheckerForUnsupportedConstraints | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+
+Phase 1.1.1.13 ShapesExcludeCompatibilityChecker
+Phase 1.1.1.10 Laguna PBlock Checker | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+
+Phase 1.1.1.14 ShapePlacementValidityChecker
+Phase 1.1.1.11 CheckerForMandatoryPrePlacedCells | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+
+Phase 1.1.1.15 CascadeElementConstraintsChecker
+Phase 1.1.1.12 OverlappingPBlocksChecker | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+Phase 1.1.1.13 ShapesExcludeCompatibilityChecker | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+
+Phase 1.1.1.16 IOStdCompatabilityChecker
+Phase 1.1.1.15 CascadeElementConstraintsChecker | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+
+Phase 1.1.1.17 HdioRelatedChecker
+Phase 1.1.1.16 IOStdCompatabilityChecker | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+Phase 1.1.1.17 HdioRelatedChecker | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+Phase 1.1.1.14 ShapePlacementValidityChecker | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 447 ; free virtual = 12375
+WARNING: [Place 30-879] Found overlapping PBlocks. The use of overlapping PBlocks is not recommended as it may lead to legalization errors or unplaced instances.
+WARNING: [Place 30-12] An IO Bus FIXED_IO_mio with more than one IO standard is found. Components associated with this bus are: 
+	FIXED_IO_mio[31] of IOStandard LVCMOS33
+	FIXED_IO_mio[30] of IOStandard LVCMOS33
+	FIXED_IO_mio[29] of IOStandard LVCMOS33
+	FIXED_IO_mio[28] of IOStandard LVCMOS33
+	FIXED_IO_mio[27] of IOStandard LVCMOS18
+	FIXED_IO_mio[26] of IOStandard LVCMOS18
+	FIXED_IO_mio[25] of IOStandard LVCMOS18
+	FIXED_IO_mio[24] of IOStandard LVCMOS18
+	FIXED_IO_mio[23] of IOStandard LVCMOS18
+	FIXED_IO_mio[22] of IOStandard LVCMOS18
+	FIXED_IO_mio[21] of IOStandard LVCMOS18
+	FIXED_IO_mio[20] of IOStandard LVCMOS18
+	FIXED_IO_mio[19] of IOStandard LVCMOS18
+	FIXED_IO_mio[18] of IOStandard LVCMOS18
+	FIXED_IO_mio[17] of IOStandard LVCMOS18
+	FIXED_IO_mio[16] of IOStandard LVCMOS18
+	FIXED_IO_mio[15] of IOStandard LVCMOS33
+	FIXED_IO_mio[14] of IOStandard LVCMOS33
+	FIXED_IO_mio[13] of IOStandard LVCMOS33
+	FIXED_IO_mio[12] of IOStandard LVCMOS33
+	FIXED_IO_mio[11] of IOStandard LVCMOS33
+	FIXED_IO_mio[10] of IOStandard LVCMOS33
+	FIXED_IO_mio[9] of IOStandard LVCMOS33
+	FIXED_IO_mio[8] of IOStandard LVCMOS33
+	FIXED_IO_mio[7] of IOStandard LVCMOS33
+	FIXED_IO_mio[6] of IOStandard LVCMOS33
+	FIXED_IO_mio[5] of IOStandard LVCMOS33
+	FIXED_IO_mio[4] of IOStandard LVCMOS33
+	FIXED_IO_mio[3] of IOStandard LVCMOS33
+	FIXED_IO_mio[2] of IOStandard LVCMOS33
+	FIXED_IO_mio[1] of IOStandard LVCMOS33
+	FIXED_IO_mio[0] of IOStandard LVCMOS33
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 1.1.1.18 IO and Clk Clean Up
+
+Phase 1.1.1.18.1 Constructing HAPIClkRuleMgr
+Phase 1.1.1.18.1 Constructing HAPIClkRuleMgr | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 446 ; free virtual = 12374
+Phase 1.1.1.18 IO and Clk Clean Up | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 446 ; free virtual = 12374
+
+Phase 1.1.1.19 Implementation Feasibility check On IDelay
+Phase 1.1.1.19 Implementation Feasibility check On IDelay | Checksum: 6e1fef2d
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 446 ; free virtual = 12374
+
+Phase 1.1.1.20 Commit IO Placement
+Phase 1.1.1.20 Commit IO Placement | Checksum: 7f5cf05e
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 446 ; free virtual = 12374
+Phase 1.1.1 ParallelPlaceIOClockAndInitTop | Checksum: 7f5cf05e
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 446 ; free virtual = 12374
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: f9baee00
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 446 ; free virtual = 12374
+
+Phase 1.2 Build Placer Netlist Model
+
+Phase 1.2.1 Place Init Design
+
+Phase 1.2.1.1 Make Others
+Phase 1.2.1.1 Make Others | Checksum: 14f04c84c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 446 ; free virtual = 12374
+
+Phase 1.2.1.2 Init Lut Pin Assignment
+Phase 1.2.1.2 Init Lut Pin Assignment | Checksum: 14f04c84c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 446 ; free virtual = 12374
+Phase 1.2.1 Place Init Design | Checksum: 142542499
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 439 ; free virtual = 12368
+Phase 1.2 Build Placer Netlist Model | Checksum: 142542499
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 439 ; free virtual = 12368
+
+Phase 1.3 Constrain Clocks/Macros
+Phase 1.3 Constrain Clocks/Macros | Checksum: 142542499
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 439 ; free virtual = 12368
+Phase 1 Placer Initialization | Checksum: 142542499
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1818.543 ; gain = 16.008 ; free physical = 439 ; free virtual = 12368
+
+Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: 181983bb2
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 438 ; free virtual = 12367
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 181983bb2
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 438 ; free virtual = 12367
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1b891e69b
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 438 ; free virtual = 12367
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: ee9734ce
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 438 ; free virtual = 12367
+
+Phase 3.4 updateClock Trees: DP
+Phase 3.4 updateClock Trees: DP | Checksum: ee9734ce
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 438 ; free virtual = 12367
+
+Phase 3.5 Timing Path Optimizer
+Phase 3.5 Timing Path Optimizer | Checksum: 18d846ba2
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 438 ; free virtual = 12367
+
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 15a5db57a
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 436 ; free virtual = 12365
+
+Phase 3.7 Small Shape Detail Placement
+Phase 3.7 Small Shape Detail Placement | Checksum: 23f3b9550
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 433 ; free virtual = 12362
+
+Phase 3.8 Re-assign LUT pins
+Phase 3.8 Re-assign LUT pins | Checksum: 1cc82407a
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 433 ; free virtual = 12362
+
+Phase 3.9 Pipeline Register Optimization
+Phase 3.9 Pipeline Register Optimization | Checksum: 1cc82407a
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 433 ; free virtual = 12362
+
+Phase 3.10 Fast Optimization
+Phase 3.10 Fast Optimization | Checksum: 12c7a96c9
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 427 ; free virtual = 12355
+Phase 3 Detail Placement | Checksum: 12c7a96c9
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 427 ; free virtual = 12355
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 updateClock Trees: PCOPT
+Phase 4.1.1 updateClock Trees: PCOPT | Checksum: 173060781
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 427 ; free virtual = 12355
+
+Phase 4.1.2 Post Placement Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-4.188. For the most accurate timing information please run report_timing.
+Phase 4.1.2 Post Placement Optimization | Checksum: 1f1884248
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 425 ; free virtual = 12354
+Phase 4.1 Post Commit Optimization | Checksum: 1f1884248
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 425 ; free virtual = 12354
+
+Phase 4.2 Sweep Clock Roots: Post-Placement
+Phase 4.2 Sweep Clock Roots: Post-Placement | Checksum: 1f1884248
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 425 ; free virtual = 12354
+
+Phase 4.3 Uram Pipeline Register Optimization
+Phase 4.3 Uram Pipeline Register Optimization | Checksum: 1f1884248
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 425 ; free virtual = 12354
+
+Phase 4.4 Post Placement Cleanup
+Phase 4.4 Post Placement Cleanup | Checksum: 1f1884248
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 425 ; free virtual = 12354
+
+Phase 4.5 Placer Reporting
+Phase 4.5 Placer Reporting | Checksum: 1f1884248
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 425 ; free virtual = 12354
+
+Phase 4.6 Final Placement Cleanup
+Phase 4.6 Final Placement Cleanup | Checksum: 243f71c34
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 425 ; free virtual = 12354
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 243f71c34
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 425 ; free virtual = 12354
+Ending Placer Task | Checksum: 190df3a64
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 425 ; free virtual = 12354
+INFO: [Common 17-83] Releasing license: Implementation
+35 Infos, 74 Warnings, 76 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:15 . Memory (MB): peak = 1873.590 ; gain = 71.055 ; free physical = 425 ; free virtual = 12354
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 424 ; free virtual = 12355
+report_io: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.34 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 421 ; free virtual = 12350
+report_utilization: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.28 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 419 ; free virtual = 12349
+report_control_sets: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.22 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 419 ; free virtual = 12348
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC 23-20] Rule violation (PLIO-7) Placement Constraints Check for IO constraints - An IO Bus FIXED_IO_mio[31:0] with more than one IO standard is found. Components associated with this bus are: LVCMOS18 (FIXED_IO_mio[27], FIXED_IO_mio[26], FIXED_IO_mio[25], FIXED_IO_mio[24], FIXED_IO_mio[23], FIXED_IO_mio[22], FIXED_IO_mio[21], FIXED_IO_mio[20], FIXED_IO_mio[19], FIXED_IO_mio[18], FIXED_IO_mio[17], FIXED_IO_mio[16]); LVCMOS33 (FIXED_IO_mio[31], FIXED_IO_mio[30], FIXED_IO_mio[29], FIXED_IO_mio[28], FIXED_IO_mio[15], FIXED_IO_mio[14], FIXED_IO_mio[13], FIXED_IO_mio[12], FIXED_IO_mio[11], FIXED_IO_mio[10], FIXED_IO_mio[9], FIXED_IO_mio[8], FIXED_IO_mio[7], FIXED_IO_mio[6], FIXED_IO_mio[5] (the first 15 of 20 listed)); 
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: b869c614 ConstDB: 0 ShapeSum: d8757450 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 4474543a
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:22 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 353 ; free virtual = 12279
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 4474543a
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:22 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 353 ; free virtual = 12279
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 4474543a
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:22 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 329 ; free virtual = 12255
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 4474543a
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:22 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 329 ; free virtual = 12255
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 11b407ac1
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:22 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12248
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.135 | TNS=-254.325| WHS=-0.065 | THS=-0.326 |
+
+Phase 2 Router Initialization | Checksum: 115ccb087
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:22 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12248
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 148c79eee
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:22 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12248
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 0
+
+Phase 4.1.1 Update Timing
+Phase 4.1.1 Update Timing | Checksum: 1031965ae
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:22 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-5.150 | TNS=-353.047| WHS=N/A    | THS=N/A    |
+
+
+Phase 4.1.2 GlobIterForTiming
+
+Phase 4.1.2.1 Update Timing
+Phase 4.1.2.1 Update Timing | Checksum: 1da7cc9ba
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:23 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+
+Phase 4.1.2.2 Fast Budgeting
+Phase 4.1.2.2 Fast Budgeting | Checksum: 224f779f7
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:23 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+Phase 4.1.2 GlobIterForTiming | Checksum: ccf1cbf7
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:23 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+Phase 4.1 Global Iteration 0 | Checksum: ccf1cbf7
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:23 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 21
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+
+Phase 4.2.1 Update Timing
+Phase 4.2.1 Update Timing | Checksum: 1d68d9241
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:23 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.885 | TNS=-332.793| WHS=N/A    | THS=N/A    |
+
+
+Phase 4.2.2 GlobIterForTiming
+
+Phase 4.2.2.1 Update Timing
+Phase 4.2.2.1 Update Timing | Checksum: 1aac5e7b7
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:23 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+
+Phase 4.2.2.2 Fast Budgeting
+Phase 4.2.2.2 Fast Budgeting | Checksum: 138ecc984
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:23 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+Phase 4.2.2 GlobIterForTiming | Checksum: 17d581617
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:23 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+Phase 4.2 Global Iteration 1 | Checksum: 17d581617
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:23 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+
+Phase 4.3.1 Update Timing
+Phase 4.3.1 Update Timing | Checksum: 17ebdd41c
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.948 | TNS=-331.378| WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: 1ad8895ba
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+Phase 4 Rip-up And Reroute | Checksum: 1ad8895ba
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 1d776164d
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 322 ; free virtual = 12247
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.750 | TNS=-318.037| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: d75d06fd
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 321 ; free virtual = 12246
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: d75d06fd
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 321 ; free virtual = 12246
+Phase 5 Delay and Skew Optimization | Checksum: d75d06fd
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 321 ; free virtual = 12246
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 70cfe2f0
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 320 ; free virtual = 12246
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.732 | TNS=-303.722| WHS=0.242  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 70cfe2f0
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 320 ; free virtual = 12246
+Phase 6 Post Hold Fix | Checksum: 70cfe2f0
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 320 ; free virtual = 12246
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.140766 %
+  Global Horizontal Routing Utilization  = 0.141774 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 16.2162%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 23.4234%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 36.7647%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 25%, No Congested Regions.
+Phase 7 Route finalize | Checksum: f95a51ca
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 320 ; free virtual = 12246
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: f95a51ca
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 318 ; free virtual = 12244
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 142ceddb7
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 318 ; free virtual = 12244
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-4.732 | TNS=-303.722| WHS=0.242  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 142ceddb7
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 318 ; free virtual = 12244
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 318 ; free virtual = 12244
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+49 Infos, 76 Warnings, 76 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:25 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 318 ; free virtual = 12244
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.45 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1873.590 ; gain = 0.000 ; free physical = 315 ; free virtual = 12243
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/exchizz/SDU/Skole/7.Semester/EMB1/VHDL/EMB_group_4/Lektion7/Lektion7.runs/impl_1/design_1_wrapper_drc_routed.rpt.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  3 15:06:12 2016...
