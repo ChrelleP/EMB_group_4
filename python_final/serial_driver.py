@@ -13,10 +13,11 @@ ser.isOpen()
 print '\r\nEnter your commands below.\r\nInsert "exit" to leave the application.\r\n'
 print 'For PWM control press <1> and then press the PWM (0-255).'
 
-input=1
 while 1 :
+
     # get keyboard input
     input = raw_input(">> ")
+    print input
         # Python 3 users
          #input = input(">> ")
     if input == 'exit':
@@ -31,6 +32,9 @@ while 1 :
         elif int(input) < 0:
             print "PWM command out of bounds"
             input = '0'
+
+        ser.write('#W:04' + str(hex(int(255-int(input)))[2:].zfill(8)) + '\r\n')
+
         #print input
         # send the character to the device
         # (note that I happend a \r\n carriage return and line feed to the characters - this is requested by my device)
@@ -39,7 +43,13 @@ while 1 :
         #print out
 
         # Writes the PWM command to address 4
-        ser.write('#W:04' + str(hex(int(input))[2:].zfill(8)) + '\r\n')
+    elif input == '2':
+        print "ok"
+        for i in range (0,75):
+            output = 255 -i
+            print output
+            ser.write('#W:04' + str(hex(output)[2:].zfill(8)) + '\r\n')
+            time.sleep(0.5)
         print "Sent command of PWM = " + input + " Sent, press <1> again for new PWM command"
         out = ''
         # let's wait one second before reading output (let's give device time to answer)
