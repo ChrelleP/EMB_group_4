@@ -39,7 +39,8 @@ entity sound_generator is
            --back_emf: in STD_LOGIC;
            --pwm_add: out STD_LOGIC_VECTOR (7 downto 0);
            freq_out: out STD_LOGIC;
-           direction: out STD_LOGIC);
+           direction: out STD_LOGIC;
+           control_out: out STD_LOGIC);
 end sound_generator;
 
 architecture Behavioral of sound_generator is
@@ -53,19 +54,24 @@ begin
           freq_out <= freq_in;
           --pwm_add <= (others => '0');
           direction <= '1';
+          control_out <= '1';
 
         when "01" => -- NO_SOUND change direction
           freq_out <= freq_in;
           --pwm_add <= (others => '0');
           direction <= '0';
+          control_out <= '1';
+          
         when "10" => -- SOUND_2
           freq_out <= freq_in;
           direction<=direction_temp;
-        when "11" => -- SOUND_3
+          control_out <= '1';
+        when "11" => --  Back EMF
+           control_out <= '0';
           null;
         when others =>
           null;
-    end case;
+       end case;
 end process;
 
 

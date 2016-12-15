@@ -38,127 +38,92 @@ entity bldc_driver is
            Bout_en  : out STD_LOGIC;
            Cout     : out STD_LOGIC;
            Cout_en  : out STD_LOGIC;
-           clk_in   : in STD_LOGIC;
-           pwm_in   : in STD_LOGIC;
-           direction: in STD_LOGIC);
+           hall_in  : in STD_LOGIC_VECTOR(2 downto 0);
+           pwm_in   : in STD_LOGIC);
+           --direction: in STD_LOGIC);
 end bldc_driver;
 
 architecture Behavioral of bldc_driver is
-    type state is (state_1, state_2, state_3, state_4, state_5, state_6);
-    signal cr_state, nx_state: state := state_1;
+    --type state is (state_1, state_2, state_3, state_4, state_5, state_6);
+    --signal cr_state, nx_state: state := state_1;
 begin
 
-fsm: process(cr_state, pwm_in)
+
+fsm: process(hall_in, pwm_in)
 begin
-        case cr_state is
-          when state_1 =>
-            Aout<='1'  and pwm_in;
-            Aout_en<='1';
-
-            Bout<='0';
-            Bout_en<='1';
-
-            Cout<='0';
-            Cout_en<='0';
-
-            if direction = '1' then
-              nx_state <= state_2;
-            elsif direction = '0' then
-              nx_state <= state_6;
-            end if;
-
-           when state_2 =>
-            Aout<='1' and pwm_in;
-            Aout_en <='1';
-
-            Bout<='0';
-            Bout_en <='0';
-
-            Cout<='0';
-            Cout_en<='1';
-
-            if direction = '1' then
-              nx_state <= state_3;
-            elsif direction = '0' then
-              nx_state <= state_1;
-            end if;
-
-           when state_3 =>
-            Aout<='0';
-            Aout_en <='0';
-
-            Bout<='1'  and pwm_in;
-            Bout_en <='1';
-
-            Cout<='0';
-            Cout_en<='1';
-
-            if direction = '1' then
-              nx_state <= state_4;
-            elsif direction = '0' then
-              nx_state <= state_2;
-            end if;
-
-           when state_4 =>
-
-            Aout<='0';
-            Aout_en <='1';
-
-            Bout<='1'  and pwm_in;
-            Bout_en <='1';
-
-            Cout<='0';
-            Cout_en<='0';
-
-            if direction = '1' then
-              nx_state <= state_5;
-            elsif direction = '0' then
-              nx_state <= state_3;
-            end if;
-
-           when state_5 =>
-            Aout<='0';
-            Aout_en <='1';
-
-            Bout<='0';
-            Bout_en <='0';
-
-            Cout<='1'  and pwm_in;
-            Cout_en<='1';
-
-            if direction = '1' then
-              nx_state <= state_6;
-            elsif direction = '0' then
-              nx_state <= state_4;
-            end if;
-
-           when state_6 =>
-
-            Aout<='0';
-            Aout_en <='0';
-
-            Bout<='0';
-            Bout_en <='1';
-
-            Cout<='1'  and pwm_in;
-            Cout_en<='1';
-
-            if direction = '1' then
-              nx_state <= state_1;
-            elsif direction = '0' then
-              nx_state <= state_5;
-            end if;
-
-          when others =>
-            null;
-      end case;
+    case hall_in is
+      when "101" =>
+        Aout<='1' and pwm_in;
+        Aout_en<='1';
+    
+        Bout<='0';
+        Bout_en<='1';
+    
+        Cout<='0';
+        Cout_en<='0';
+    
+       when "100" =>
+        Aout<='1' and pwm_in;
+        Aout_en <='1';
+    
+        Bout<='0';
+        Bout_en <='0';
+    
+        Cout<='0';
+        Cout_en<='1';
+    
+    
+       when "110" =>
+        Aout<='0';
+        Aout_en <='0';
+    
+        Bout<='1'  and pwm_in;
+        Bout_en <='1';
+    
+        Cout<='0';
+        Cout_en<='1';
+    
+       when "010" =>
+    
+        Aout<='0';
+        Aout_en <='1';
+    
+        Bout<='1'  and pwm_in;
+        Bout_en <='1';
+    
+        Cout<='0';
+        Cout_en<='0';
+    
+       when "011" =>
+        Aout<='0';
+        Aout_en <='1';
+    
+        Bout<='0';
+        Bout_en <='0';
+    
+        Cout<='1'  and pwm_in;
+        Cout_en<='1';
+    
+       when "001" =>
+    
+        Aout<='0';
+        Aout_en <='0';
+    
+        Bout<='0';
+        Bout_en <='1';
+    
+        Cout<='1'  and pwm_in;
+        Cout_en<='1';
+      when others =>
+        null;
+    end case;
 end process;
 
-logic: process(clk_in)
-begin
-    if Rising_edge(clk_in) then
-        cr_state<=nx_state;
-    end if;
-end process;
+--logic: process(clk_in)
+--begin
+--    if Rising_edge(clk_in) then
+--        cr_state<=nx_state;
+--    end if;
+--end process;
 
 end Behavioral;
