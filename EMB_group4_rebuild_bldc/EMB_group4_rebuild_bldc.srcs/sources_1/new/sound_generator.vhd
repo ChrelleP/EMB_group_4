@@ -35,7 +35,7 @@ USE ieee.numeric_std.ALL;
 entity sound_generator is
     Port ( clk_200m_in : in STD_LOGIC;
            freq_in: in STD_LOGIC;
-           mode: in STD_LOGIC_VECTOR (1 downto 0);
+           mode: in STD_LOGIC_VECTOR (2 downto 0);
            --back_emf: in STD_LOGIC;
            --pwm_add: out STD_LOGIC_VECTOR (7 downto 0);
            freq_out: out STD_LOGIC;
@@ -50,25 +50,30 @@ begin
 state: process(mode)
 begin
       case mode is
-        when "00" => -- NO_SOUND
+        when "000" => -- NO_SOUND
           freq_out <= freq_in;
           --pwm_add <= (others => '0');
           direction <= '1';
           control_out <= '1';
 
-        when "01" => -- NO_SOUND change direction
+        when "001" => -- NO_SOUND change direction
           freq_out <= freq_in;
           --pwm_add <= (others => '0');
           direction <= '0';
           control_out <= '1';
-          
-        when "10" => -- SOUND_2
+
+        when "010" => -- SOUND_1
           freq_out <= freq_in;
           direction<=direction_temp;
           control_out <= '1';
-        when "11" => --  Back EMF
-           control_out <= '0';
-          null;
+
+        when "011" => --  Back EMF
+          control_out <= '0';
+
+        when "100" => -- BACK EMF
+          control_out <= '1';
+
+
         when others =>
           null;
        end case;
