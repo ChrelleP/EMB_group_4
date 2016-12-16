@@ -40,7 +40,7 @@ entity sound_generator is
            --pwm_add: out STD_LOGIC_VECTOR (7 downto 0);
            freq_out: out STD_LOGIC;
            direction: out STD_LOGIC;
-           control_out: out STD_LOGIC);
+           back_emf_enable: out STD_LOGIC);
 end sound_generator;
 
 architecture Behavioral of sound_generator is

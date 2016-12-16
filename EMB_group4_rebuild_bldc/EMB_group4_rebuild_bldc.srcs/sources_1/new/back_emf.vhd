@@ -33,7 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity back_emf is
     Port ( hall_in : in STD_LOGIC_VECTOR (2 downto 0);
-           control_in : in STD_LOGIC;
+           back_emf_enable : in STD_LOGIC;
            hall_out : out STD_LOGIC_VECTOR (2 downto 0);
            clk_in : in STD_LOGIC;
            direction_in : STD_LOGIC);
@@ -46,7 +46,7 @@ begin
 simulate_hall: process(clk_in, hall_in)
 begin
     --if rising_edge(clk_in) and 
-     if control_in = '1' then
+     if back_emf_enable = '1' then
         case cr_state is
               when state_1 =>
                 hall_out<="101";
@@ -107,7 +107,7 @@ begin
                 null;
         end case;
     end if;
-    if control_in='0' then
+    if back_emf_enable='0' then
         hall_out <= hall_in;
     end if;
 end process;
