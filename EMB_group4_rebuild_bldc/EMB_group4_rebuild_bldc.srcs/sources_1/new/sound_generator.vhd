@@ -89,35 +89,11 @@ begin
        end case;
 end process;
 
-
-mode3: process(amplitude_in(8),clk_200m_in) 
-    VARIABLE   counter : INTEGER RANGE 0 TO 2 := 0;
-begin
-    if rising_edge(amplitude_in(8)) then
-        freq_out_temp <= '1';
-        counter:=0;
-    end if;
-    
-    if falling_edge(amplitude_in(8)) then
-        freq_out_temp <='1';
-        counter:=0;
-    end if;
-    
-    if rising_edge(clk_200m_in) and freq_out_temp='1' then
-        if counter = 2 then
-            freq_out_temp <= '0';
-         end if;
-         counter:=counter+1;
-    end if;
-end process;
-
 mode1:process(freq_in)
 begin
     if rising_edge(freq_in) then
         direction_temp <= not direction_temp;
     end if;
 end process;
-
-
 
 end Behavioral;
