@@ -21,6 +21,9 @@ duration = 3; %the file properties is showing duration of 5s
 t=[0: 1/samplingFreq: duration];
 y=sin(2*pi*freqOfTone*t)';
 
+
+plot(ds_data)
+
 % Write wav file
 audiowrite('modified.wav', ds_data, rate);
 disp('Modification complete!')
