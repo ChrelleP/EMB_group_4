@@ -37,14 +37,16 @@ entity sound_generator is
            freq_in: in STD_LOGIC;
            mode: in STD_LOGIC_VECTOR (2 downto 0);
            --back_emf: in STD_LOGIC;
-           --pwm_add: out STD_LOGIC_VECTOR (7 downto 0);
+           pwm_add: out STD_LOGIC_VECTOR (7 downto 0);
            freq_out: out STD_LOGIC;
-           direction: out STD_LOGIC;
+           direction_out: out STD_LOGIC;
+           amplitude_in: in STD_LOGIC_VECTOR(8 downto 0);
            back_emf_enable: out STD_LOGIC);
 end sound_generator;
 
 architecture Behavioral of sound_generator is
     signal direction_temp: STD_LOGIC := '0';
+    signal freq_out_temp : STD_LOGIC :='0';
 begin
 
 state: process(mode)
@@ -52,33 +54,62 @@ begin
       case mode is
         when "000" => -- NO_SOUND
           freq_out <= freq_in;
-          --pwm_add <= (others => '0');
-          direction <= '1';
-          control_out <= '1';
+          direction_out <= '1';
+          back_emf_enable <= '0';
+          pwm_add<= (others=>'0');
 
         when "001" => -- NO_SOUND change direction
           freq_out <= freq_in;
-          --pwm_add <= (others => '0');
-          direction <= '0';
-          control_out <= '1';
+          direction_out <= '0';
+          back_emf_enable <= '0';
+          pwm_add<= (others=>'0');
 
         when "010" => -- SOUND_1
           freq_out <= freq_in;
-          direction<=direction_temp;
-          control_out <= '1';
+          direction_out<=direction_temp;
+          back_emf_enable <= '0';
+          pwm_add<= (others=>'0');
 
-        when "011" => --  Back EMF
-          control_out <= '0';
+        when "011" => --  sound_3
+          back_emf_enable <= '0';
+          pwm_add <=amplitude_in(7 downto 0);
+          direction_out <= amplitude_in(8);
+          freq_out<= freq_out_temp;
+          
+        when "111" => --  sound_2
+          back_emf_enable <= '1';
+          pwm_add<= (others=>'0');
 
         when "100" => -- BACK EMF
-          control_out <= '1';
-
+          back_emf_enable <= '1';
+          pwm_add<= (others=>'0');
 
         when others =>
           null;
        end case;
 end process;
 
+
+mode3: process(amplitude_in(8),clk_200m_in) 
+    VARIABLE   counter : INTEGER RANGE 0 TO 2 := 0;
+begin
+    if rising_edge(amplitude_in(8)) then
+        freq_out_temp <= '1';
+        counter:=0;
+    end if;
+    
+    if falling_edge(amplitude_in(8)) then
+        freq_out_temp <='1';
+        counter:=0;
+    end if;
+    
+    if rising_edge(clk_200m_in) and freq_out_temp='1' then
+        if counter = 2 then
+            freq_out_temp <= '0';
+         end if;
+         counter:=counter+1;
+    end if;
+end process;
 
 mode1:process(freq_in)
 begin

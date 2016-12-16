@@ -46,7 +46,7 @@ begin
 simulate_hall: process(clk_in, hall_in)
 begin
     --if rising_edge(clk_in) and 
-     if back_emf_enable = '1' then
+     if back_emf_enable = '0' then
         case cr_state is
               when state_1 =>
                 hall_out<="101";
@@ -107,8 +107,16 @@ begin
                 null;
         end case;
     end if;
-    if back_emf_enable='0' then
-        hall_out <= hall_in;
+    if back_emf_enable='1' then
+--        if direction_in ='0':
+--            case hall_in is
+--                when "101"
+--                    hall_out <= "110";
+ --                when 
+ --        end if;
+  --       if direction_in ='1' then
+            hall_out <= hall_in;
+ --        end if;
     end if;
 end process;
 

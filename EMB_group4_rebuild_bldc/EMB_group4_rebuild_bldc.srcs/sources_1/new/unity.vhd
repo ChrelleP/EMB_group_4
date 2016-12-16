@@ -33,12 +33,12 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity unity_ctrl is
     port ( clk_i    : in STD_LOGIC;
-
            rx_i     : in STD_LOGIC;
            tx_o     : out STD_LOGIC;
            mode_out : out STD_LOGIC_VECTOR(2 downto 0);
            pwm_out   : out STD_LOGIC_VECTOR (7 downto 0);
-           prescaler_out   : out STD_LOGIC_VECTOR (23 downto 0));
+           prescaler_out   : out STD_LOGIC_VECTOR (23 downto 0);
+           amplitude_out : out STD_LOGIC_VECTOR(8 downto 0));
 end unity_ctrl;
 
 architecture Behavioral of unity_ctrl is
@@ -130,6 +130,7 @@ if(rising_edge(unity_clk)) then
           when "000100" => pwm_out						<= mem_data_out(7 downto 0);	--04
           when "000101" => prescaler_out			<= mem_data_out(23 downto 0);	--05
           when "000110" => mode_out						<= mem_data_out(2 downto 0);	--06
+          when "000111" => amplitude_out              <= mem_data_out(8 downto 0);
           when others =>
         end case;
     end if;
