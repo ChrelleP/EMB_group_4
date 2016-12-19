@@ -51,62 +51,27 @@ architecture Behavioral of sound_generator is
     signal last: STD_LOGIC := '0';
 begin
 
---state: process(mode,freq_out_temp)
---begin
---      case mode is
---        when "000" => -- NO_SOUND mode 1
---          freq_out <= freq_in;
---          direction_out <= '1';
---          back_emf_enable <= '0';
---          pwm_add<= (others=>'0');
-
---        when "001" => -- NO_SOUND change direction mode 2
---          freq_out <= freq_in;
---          direction_out <= '0';
---          back_emf_enable <= '0';
---          pwm_add<= (others=>'0');
-
---        when "010" => -- mode 3
---          freq_out <= freq_in;
---          direction_out<=direction_temp;
---          back_emf_enable <= '0';
---          pwm_add<= (others=>'0');
-
---        when "011" => --  mode 4
---          back_emf_enable <= '0';
---          pwm_add <= (others => '0');
---          direction_out <= amplitude_in(8);
---          freq_out<=   freq_out_temp;
-          
---        when "111" => --  sound_2
---          back_emf_enable <= '1';
---          pwm_add <=amplitude_in(7 downto 0);
-
-
---        when "100" => -- BACK EMF
---          back_emf_enable <= '1';
---          pwm_add<= (others=>'0');
-
---        when others =>
---          null; 
---       end case;
---end process;
-
---direction_out <= '1' when ---- else '0' when ...
+-- Mode 0 = "000" = feedforward, direction1
+-- Mode 1 = "001" = feeforward, direction2
+-- Mode 2 = "010" = music method 1
+-- Mode 3 = "011" = music method 3
+-- Mode 4 = "100" = Backemf, direction1
+-- Mode 5 = "101" = Backemf, direction2
+-- Mode 6 = "110" = Music method 2
 
 freq_out <= freq_in when mode = "000" or mode = "001" or mode = "010" else
             freq_out_temp when mode = "011"
             else '0';
             
-direction_out <= '1' when mode = "000" else
-                 '0' when mode = "001" else
+direction_out <= '1' when mode = "000" or mode = "100" else
+                 '0' when mode = "001" or mode = "101" else
                   direction_temp when mode = "010" else
                   amplitude_in(8) when mode = "011" 
                   else '0';
 
 back_emf_enable <= mode(2);
 
-pwm_add <= amplitude_in(7 downto 0) when mode = "111"
+pwm_add <= amplitude_in(7 downto 0) when mode = "110" or mode = "011"
            else (others=>'0');
 
 mode1:process(freq_in)
@@ -119,9 +84,6 @@ end process;
 
 mode12:process(amplitude_in(8),clk_200m_in)
 begin
-    --if rising_edge(amplitude_in(8)) then
-    --    freq_out_temp <= not freq_out_temp;
-    --end if;
     if rising_edge(clk_200m_in) then
         freq_out_temp<='0';
         if last = '0' and amplitude_in(8) = '1' then -- rising
@@ -135,26 +97,5 @@ begin
     
 end process;
 
-
---mode3: process(amplitude_in,clk_200m_in) 
---    VARIABLE   counter : INTEGER RANGE 0 TO 2 := 0;
---begin
---    if rising_edge(amplitude_in(8)) then
---        freq_out_temp <= '1';
---        counter:=0;
---    end if;
-    
---    if falling_edge(amplitude_in(8)) then
---        freq_out_temp <='1';
---        counter:=0;
---    end if;
-    
---    if rising_edge(clk_200m_in) and freq_out_temp='1' then
---        if counter = 2 then
---            freq_out_temp <= '0';
---         end if;
---         counter:=counter+1;
---    end if;
---end process;
 
 end Behavioral;
