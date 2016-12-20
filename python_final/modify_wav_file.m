@@ -2,7 +2,7 @@
 clc; clear;
 
 % Load wav file
-[data, rate] = audioread( 'low_battery_recorded.wav' );
+[data, rate] = audioread( 'imperialV2.wav' );
 
 % Downsample
 ds_integer = 4;
@@ -15,14 +15,17 @@ if channels == 2
     ds_data = (ds_data(:,1) + ds_data(:,2) ) / 2;
 end
 
-freqOfTone = 400; %audacity is showing freq = 2100hz (approx)
-samplingFreq = 44100 ;
-duration = 3; %the file properties is showing duration of 5s
+%freqOfTone = 400; %audacity is showing freq = 2100hz (approx)
+%samplingFreq = 44100 / 6 ;
+%duration = 1; %the file properties is showing duration of 5s
+%t=[0: 1/samplingFreq: duration];
+%y=sin(2*pi*freqOfTone*t)';
+
+duration = 5;
+samplingFreq = 44100 / 4;
 t=[0: 1/samplingFreq: duration];
-y=sin(2*pi*freqOfTone*t)';
-
-
-plot(ds_data)
+test = chirp(t, 1, 1, 1); 
+%plot(t, test)
 
 % Write wav file
 audiowrite('modified.wav', ds_data, rate);
