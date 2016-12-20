@@ -10,9 +10,9 @@ class sliderdemo(QWidget):
 
       super(sliderdemo, self).__init__(parent)
 
-      self.ser = serial.Serial('/dev/ttyUSB0', 3000000)
+#      self.ser = serial.Serial('/dev/ttyUSB0', 3000000)
       layout = QVBoxLayout()
-
+      layout = QHBoxLayout()
       # BUTTON FOR LOADING WAV FILE
       self.button_load = QPushButton('Read Wave File', self)
       self.button_load.clicked.connect(self.handleButton_load)

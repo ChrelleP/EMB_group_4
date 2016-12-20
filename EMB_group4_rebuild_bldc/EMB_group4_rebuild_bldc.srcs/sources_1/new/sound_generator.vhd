@@ -74,6 +74,7 @@ back_emf_enable <= mode(2);
 pwm_add <= amplitude_in(7 downto 0) when mode = "110" or mode = "011"
            else (others=>'0');
 
+
 mode1:process(freq_in)
 begin
     if rising_edge(freq_in) then
