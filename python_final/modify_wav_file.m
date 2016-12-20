@@ -31,6 +31,90 @@ test = chirp(t, 1, 1, 1);
 audiowrite('modified.wav', ds_data, rate);
 disp('Modification complete!')
 
+%% Plot FFT and run low pass motherfucker
+
+n=length(ds_data)-1;
+
+f=0:samplingFreq/n:samplingFreq;
+
+wavefft=abs(fft(ds_data)); % perform Fourier Transform
+
+subplot(2,1,1)
+plot(f,wavefft); % plot Fourier Transform
+xlabel('frequency')
+ylabel('Amplitude')
+title('Frequency Domain Plot')
+
+fc=4300;
+[b,a] = butter(5,fc/(samplingFreq/2),'low');
+output = filter(b,a,ds_data);
+
+
+n=length(output)-1;
+
+f=0:samplingFreq/n:samplingFreq;
+
+wavefft=abs(fft(output)); % perform Fourier Transform
+
+subplot(2,1,2)
+
+plot(f,wavefft); % plot Fourier Transform
+xlabel('frequency')
+ylabel('Amplitude')
+
+
+audiowrite('modified_lp.wav', output, rate);
+
+
+%% modify as square
+binary = zeros(1,length(output));
+for i = 1:length(ds_data)
+    if(output(i) > 0)
+       binary(i) = 1;
+    else
+        binary(i) = 0;
+    end;
+end;
+
+audiowrite('binary.wav', binary, rate);
+
+plot(binary)
+
+
+%% Plot FFT and run low pass motherfucker
+
+n=length(binary)-1;
+
+f=0:samplingFreq/n:samplingFreq;
+
+wavefft=abs(fft(binary)); % perform Fourier Transform
+
+subplot(2,1,1)
+plot(f,wavefft); % plot Fourier Transform
+xlabel('frequency')
+ylabel('Amplitude')
+title('Frequency Domain Plot')
+%% LP filter
+fc=3000;
+[b,a] = butter(5,fc/(samplingFreq/2),'low');
+output = filter(b,a,ds_data);
+
+
+n=length(output)-1;
+
+f=0:samplingFreq/n:samplingFreq;
+
+wavefft=abs(fft(output)); % perform Fourier Transform
+
+subplot(2,1,2)
+
+plot(f,wavefft); % plot Fourier Transform
+xlabel('frequency')
+ylabel('Amplitude')
+
+
+audiowrite('modified_lp.wav', output, rate);
+
 %% Plotting of data and examples
 
 % Sinus waveform

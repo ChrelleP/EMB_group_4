@@ -45,25 +45,5 @@ architecture Behavioral of test_block is
     signal freq_out_temp : STD_LOGIC :='0';
 begin
 
-mode3: process(amplitude_in,clk_200m_in) 
-    VARIABLE   counter : INTEGER RANGE 0 TO 2 := 0;begin
-    if rising_edge(amplitude_in) then
-        freq_out_temp <= '1';
-        counter:=0;
-    end if;
-    
-    if falling_edge(amplitude_in) then
-        freq_out_temp <='1';
-        counter:=0;
-    end if;
-    
-    if rising_edge(clk_200m_in) and freq_out_temp='1' then
-        if counter = 2 then
-            freq_out_temp <= '0';
-         end if;
-         counter:=counter+1;
-    end if;
-end process;
-
 
 end Behavioral;

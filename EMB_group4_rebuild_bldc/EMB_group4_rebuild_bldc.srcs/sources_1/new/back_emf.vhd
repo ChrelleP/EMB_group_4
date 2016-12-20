@@ -122,7 +122,7 @@ end process;
 
 logic: process(clk_in)
 begin
-    if Rising_edge(clk_in) then
+    if Rising_edge(clk_in)  then
         cr_state<=nx_state;
     end if;
 end process;
